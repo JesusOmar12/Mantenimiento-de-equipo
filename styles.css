@@ -474,7 +474,7 @@ position : absolute; /* Posición absoluta. */
 top : 60px; /* A 60px de arriba. */
 left : 0; /* A la izquierda. */
 width : 100%; /* Ancho completo. */
-background-color : #0d76a6; /* Fondo azul. */
+background-color : #0f0da6; /* Fondo azul. */
 z-index : 10; /* Se superpone. */
 }
 .nav-links.open { /* Cuando el menú está abierto. */
