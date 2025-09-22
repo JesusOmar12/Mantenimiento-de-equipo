@@ -32,13 +32,13 @@ margin-bottom : 10px; /* Margen inferior de 10 píxeles. */
 font-size : 24px; /* Tamaño de la fuente de 24 píxeles. */
 }
 .productos { /* Estilos para la sección de productos. */
-padding : 50px 20px; /* Relleno superior/inferior de 50px y lateral de 20px. */
+padding : 10px 0px; /* Relleno superior/inferior de 30px y lateral de 30px. */
 background-color: #ffffff; /* Añadido color de fondo blanco. */
 text-align : center; /* Alineación del texto al centro. */
 }
 .productos h2 { /* Estilos para el título de la sección de productos. */
 font-size : 32px; /* Tamaño de la fuente de 32 píxeles. */
-margin-bottom : 30px; /* Margen inferior de 30 píxeles. */
+margin-bottom : 10px; /* Margen inferior de 30 píxeles. */
 }
 .product-grid { /* Estilos para la cuadrícula de productos. */
 display : flex; /* Utiliza el modelo de caja flexible (flexbox). */
@@ -46,14 +46,14 @@ justify-content : center; /* Centra los elementos horizontalmente. */
 gap : 30px; /* Espacio de 30 píxeles entre los elementos. */
 }
 .product-item { /* Estilos para cada elemento de producto. */
-border : #ddd solid 1px; /* Borde sólido de 1 píxel de color gris claro. */
-padding : 20px; /* Relleno de 20 píxeles. */
-width : 200px; /* Ancho de 200 píxeles. */
+border : #ffffff solid 0px; /* Borde sólido de 1 píxel de color gris claro. */
+padding : 0 0px 0px; /* Relleno: 0 arriba, 20px a los lados, 20px abajo. */
+width : 0px; /* Ancho de 200 píxeles. */
 text-align : center; /* Alineación del texto al centro. */
 }
 .product-item img { /* Estilos para las imágenes de los productos. */
-width : 100%; /* Ancho del 100% del contenedor. */
-height : 250px; /* Altura fija de 250 píxeles. */
+width : 0%; /* Ancho del 100% del contenedor. */
+height : 0px; /* Altura fija de 150 píxeles. */
 object-fit : cover; /* La imagen cubre el contenedor manteniendo su relación de aspecto. */
 }
 @keyframes typing { /* Define la animación de escritura. */
@@ -74,22 +74,8 @@ border-color : rgb(228, 241, 156); /* El color del borde cambia para simular el 
 }
 .product-item h3 { /* Estilos para los títulos de los productos. */
 font-size : 20px; /* Tamaño de la fuente de 20 píxeles. */
-margin : 0px 0; /* Margen superior/inferior de 10px y lateral de 0. */
 }
-.product-item p { /* Estilos para los párrafos de los productos. */
-font-size : 18px; /* Tamaño de la fuente de 18 píxeles. */
-color : #333; /* Color del texto gris oscuro. */
-}
-.product-item button { /* Estilos para los botones de los productos. */
-background-color : #021b59; /* Color de fondo azul oscuro. */
-color : white; /* Color del texto blanco. */
-border : none; /* Sin borde. */
-padding : 10px 20px; /* Relleno de 10px arriba/abajo y 20px a los lados. */
-cursor : pointer; /* El cursor cambia a una mano al pasar sobre el botón. */
-}
-.product-item button:hover { /* Estilos para el botón del producto al pasar el mouse. */
-background-color : #ffffff; /* Cambia el color de fondo a un gris más oscuro. */
-}
+
 footer { /* Estilos para el pie de página. */
 background-color : #101272; /* Color de fondo azul. */
 color : white; /* Color del texto blanco. */
@@ -470,7 +456,7 @@ text-align : center; /* Texto centrado. */
 .product-item img { /* Imagen del item de producto. */
 width : 100%; /* Ancho completo. */
 height : 250px; /* Altura fija. */
-object-fit : cover; /* La imagen cubre el espacio. */
+object-fit : contain; /* La imagen se ajusta para ser completamente visible. */
 }
 @media (max-width: 767px) { /* Media query para móviles. */
 .header h1 { /* Título de cabecera en móviles. */
@@ -712,4 +698,11 @@ input[type="date"]:invalid {
 .card-title {
     font-weight: 600;
     color: #333;
+}
+
+/* Estilo para items de producto sin borde ni fondo */
+.product-item-simple {
+    border: none;
+    padding: 0;
+    box-shadow: none;
 }
