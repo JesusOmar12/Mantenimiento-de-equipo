@@ -116,7 +116,7 @@ function updateDashboard(snapshot) {
         }
     }
 
-    // 3. Últimos 5 registros
+    // 3. Últimos 1000 registros
     if (ultimosRegistrosEl) {
         const ultimos5 = records.slice(0, 1000);
         if (ultimos5.length > 0) {
