@@ -86,28 +86,6 @@ form.addEventListener('submit', async function (event) {
     }
 }); 
    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
-       
     
             // Formulario de opiniones
             document.getElementById('opinion-form').addEventListener('submit', function (e) {
