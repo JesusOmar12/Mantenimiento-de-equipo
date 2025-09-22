@@ -363,15 +363,15 @@ height : auto; /* Altura automática. */
 .slider-images-wrapper .item { /* Cada elemento del carrusel. */
 object-fit : contain; /* La imagen se ajusta dentro del contenedor. */
 animation : slideIn 6s infinite; /* Animación de deslizamiento. */
-display : flex; /* Utiliza flexbox. */
-justify-content : center; /* Centra horizontalmente. */
-align-items : center; /* Centra verticalmente. */
-height : 600px; /* Altura fija. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; /* Altura unificada para el carrusel */
 }
 .slider-images-wrapper img { /* Imágenes del carrusel. */
-width: 100%; /* Ancho completo del contenedor. */
-height: 100%; /* Altura completa del contenedor. */
-object-fit: contain; /* La imagen se ajusta para ser completamente visible. */
+    width: auto; /* Ancho automático para mantener la proporción */
+    height: 100%; /* La altura se ajusta al contenedor */
+    object-fit: contain; /* Asegura que la imagen se vea completa */
 }
 
 @media (max-width: 767px) { /* Otra media query para móviles (redundante). */
@@ -380,11 +380,11 @@ flex-direction : column; /* Apilado vertical. */
 align-items : flex-start; /* Alineado a la izquierda. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en móviles. */
-height : 300px; /* Altura más pequeña. */
+height : 250px; /* Altura más pequeña. */
 }
 .slider-images-wrapper img { /* Imágenes del carrusel en móviles. */
 max-width : 100%; /* Ancho máximo completo. */
-max-height : 100%; /* Altura máxima completa. */
+height : 100%; /* Altura máxima completa. */
 }
 .history-wrapper h2 { /* Título de historia en móviles. */
 font-size : 1.5rem; /* Tamaño de fuente más pequeño. */
@@ -402,7 +402,7 @@ padding : 15px; /* Relleno más pequeño. */
 padding : 1rem 2rem; /* Más relleno lateral. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en tablets. */
-height : 400px; /* Altura intermedia. */
+height : 350px; /* Altura intermedia. */
 }
 .history-wrapper h2 { /* Título de historia en tablets. */
 font-size : 2rem; /* Tamaño de fuente. */
@@ -419,7 +419,7 @@ width : 95%; /* Ancho del 95%. */
 padding : 1.5rem 3rem; /* Aún más relleno. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en escritorios. */
-height : 500px; /* Altura mayor. */
+height : 450px; /* Altura mayor. */
 }
 .slider-description h1 { /* Título del carrusel en escritorios. */
 font-size : 2.5rem; /* Tamaño de fuente. */
@@ -436,7 +436,7 @@ font-size : 1.1rem; /* Tamaño de fuente. */
 }
 @media (min-width: 1921px) { /* Media query para pantallas muy grandes. */
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel. */
-height : 700px; /* Altura aún mayor. */
+height : 550px; /* Altura aún mayor. */
 }
 .slider-description h1 { /* Título del carrusel. */
 font-size : 3.5rem; /* Tamaño de fuente. */
