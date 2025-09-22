@@ -92,7 +92,7 @@ vertical-align : baseline; /* Alinea verticalmente los elementos a la línea de 
 margin-left : 40px; /* Margen izquierdo de 40 píxeles. */
 }
 .container { /* Estilos para un contenedor genérico. */
-width : 100%; /* Ancho de 100 píxeles. */
+width : 100px; /* Ancho de 100 píxeles. */
 overflow : hidden; /* Oculta el contenido que se desborda. */
 }
 .imagen-flotante { /* Estilos para una imagen flotante. */
@@ -262,14 +262,13 @@ display : flex; /* Se muestra como flexbox. */
 flex-direction : column; /* Apilado verticalmente. */
 align-items : flex-start; /* Alineado a la izquierda. */
 background-color: #0c169e; /* Añade un color de fondo sólido. */
-position : fixed; /* Posición absoluta. */
+position : absolute; /* Posición absoluta. */
 top : 60px; /* A 60px de la parte superior. */
-left : -100%; /* A la izquierda. */
-width : 70%; /* Ocupa todo el ancho para una mejor apariencia. */
+left : 0; /* A la izquierda. */
+width : 13%; /* Ocupa todo el ancho para una mejor apariencia. */
 height : calc(100vh - 60px); /* Altura completa de la ventana. */
 padding : 1rem; /* Relleno. */
 z-index : 10; /* Se superpone a otros elementos. */
-transition: left 0.3s ease-in-out; /* Transición suave */
 }
 .navbar { /* Redefinición de estilos para la barra de navegación. */
 background-color : #101272; /* Fondo azul. */
@@ -363,15 +362,15 @@ height : auto; /* Altura automática. */
 .slider-images-wrapper .item { /* Cada elemento del carrusel. */
 object-fit : contain; /* La imagen se ajusta dentro del contenedor. */
 animation : slideIn 6s infinite; /* Animación de deslizamiento. */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px; /* Altura unificada para el carrusel */
+display : flex; /* Utiliza flexbox. */
+justify-content : center; /* Centra horizontalmente. */
+align-items : center; /* Centra verticalmente. */
+height : 600px; /* Altura fija. */
 }
 .slider-images-wrapper img { /* Imágenes del carrusel. */
-    width: auto; /* Ancho automático para mantener la proporción */
-    height: 100%; /* La altura se ajusta al contenedor */
-    object-fit: contain; /* Asegura que la imagen se vea completa */
+width: 100%; /* Ancho completo del contenedor. */
+height: 100%; /* Altura completa del contenedor. */
+object-fit: contain; /* La imagen se ajusta para ser completamente visible. */
 }
 
 @media (max-width: 767px) { /* Otra media query para móviles (redundante). */
@@ -380,11 +379,11 @@ flex-direction : column; /* Apilado vertical. */
 align-items : flex-start; /* Alineado a la izquierda. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en móviles. */
-height : 250px; /* Altura más pequeña. */
+height : 300px; /* Altura más pequeña. */
 }
 .slider-images-wrapper img { /* Imágenes del carrusel en móviles. */
 max-width : 100%; /* Ancho máximo completo. */
-height : 100%; /* Altura máxima completa. */
+max-height : 100%; /* Altura máxima completa. */
 }
 .history-wrapper h2 { /* Título de historia en móviles. */
 font-size : 1.5rem; /* Tamaño de fuente más pequeño. */
@@ -402,7 +401,7 @@ padding : 15px; /* Relleno más pequeño. */
 padding : 1rem 2rem; /* Más relleno lateral. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en tablets. */
-height : 350px; /* Altura intermedia. */
+height : 400px; /* Altura intermedia. */
 }
 .history-wrapper h2 { /* Título de historia en tablets. */
 font-size : 2rem; /* Tamaño de fuente. */
@@ -419,7 +418,7 @@ width : 95%; /* Ancho del 95%. */
 padding : 1.5rem 3rem; /* Aún más relleno. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en escritorios. */
-height : 450px; /* Altura mayor. */
+height : 500px; /* Altura mayor. */
 }
 .slider-description h1 { /* Título del carrusel en escritorios. */
 font-size : 2.5rem; /* Tamaño de fuente. */
@@ -436,7 +435,7 @@ font-size : 1.1rem; /* Tamaño de fuente. */
 }
 @media (min-width: 1921px) { /* Media query para pantallas muy grandes. */
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel. */
-height : 550px; /* Altura aún mayor. */
+height : 700px; /* Altura aún mayor. */
 }
 .slider-description h1 { /* Título del carrusel. */
 font-size : 3.5rem; /* Tamaño de fuente. */
@@ -477,10 +476,9 @@ left : 0; /* A la izquierda. */
 width : 100%; /* Ancho completo. */
 background-color : #0f0da6; /* Fondo azul. */
 z-index : 10; /* Se superpone. */
-left: 0; /* Asegura que se muestre desde la izquierda */
 }
 .nav-links.open { /* Cuando el menú está abierto. */
-display : flex; /* Se muestra como bloque. */
+display : block; /* Se muestra como bloque. */
 }
 .navbar-toggler { /* Botón de menú hamburguesa. */
 display : inline-block; /* Se muestra. */
@@ -492,8 +490,7 @@ cursor : pointer; /* Cursor de mano. */
 margin-left : 0; /* Sin margen izquierdo. */
 }
 .nav-links.open {
-    left: 0; /* Mueve el menú a la vista */
-    width: 70%; /* Un ancho adaptable para el menú lateral */
+    width: 250px; /* Un ancho fijo para el menú lateral */
 }
 .productos .col-md-5 {
     flex: 0 0 auto; /* Evita que las columnas se estiren demasiado */
