@@ -27,15 +27,18 @@ const dashboardStats = document.getElementById('dashboard-stats');
 function updateDashboard(snapshot) {
     const totalMantenimientosEl = document.getElementById('total-mantenimientos');
     const porTipoEl = document.getElementById('mantenimientos-por-tipo');
+    const ultimosRegistrosEl = document.getElementById('ultimos-registros');
 
     if (!dashboardStats || !snapshot.exists()) {
         if(totalMantenimientosEl) totalMantenimientosEl.textContent = '0';
         if(porTipoEl) porTipoEl.innerHTML = '<p>No hay datos para mostrar.</p>';
+        if(ultimosRegistrosEl) ultimosRegistrosEl.innerHTML = '<p>No hay registros recientes.</p>';
         return;
     }
 
     const data = snapshot.val();
-    const records = Object.values(data);
+    // Convertir a array y ordenar por fecha descendente para obtener los más recientes primero
+    const records = Object.values(data).sort((a, b) => new Date(b.Fecha_de_Mantenimiento) - new Date(a.Fecha_de_Mantenimiento));
 
     // 1. Total de mantenimientos
     if (totalMantenimientosEl) {
@@ -53,6 +56,23 @@ function updateDashboard(snapshot) {
         porTipoEl.innerHTML = Object.entries(counts)
             .map(([tipo, count]) => `<p><strong>${tipo}:</strong> ${count}</p>`)
             .join('');
+    }
+
+    // 3. Últimos 5 registros
+    if (ultimosRegistrosEl) {
+        const ultimos5 = records.slice(0, 5);
+        if (ultimos5.length > 0) {
+            ultimosRegistrosEl.innerHTML = `
+                <ul class="list-group list-group-flush">
+                    ${ultimos5.map(rec => `
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            ${rec.Nombre_del_Equipo} (${rec.Tipo_de_Mantenimiento})
+                            <span class="badge bg-secondary rounded-pill">${rec.Fecha_de_Mantenimiento}</span>
+                        </li>`).join('')}
+                </ul>`;
+        } else {
+            ultimosRegistrosEl.innerHTML = '<p>No hay registros recientes.</p>';
+        }
     }
 }
 
