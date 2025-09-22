@@ -136,12 +136,14 @@ justify-content : center; /* Centra los elementos verticalmente. */
 align-items : center; /* Centra los elementos horizontalmente. */
 }
 .Formulario {
-width : 440px;
-height : auto;
-overflow : hidden;
-border : #ccc solid 1px;
-padding : 5px;
-float : left;
+    width: 90%; /* Usar porcentaje para ser responsivo */
+    max-width: 500px; /* Ancho máximo para pantallas grandes */
+    margin: 20px auto; /* Centrar el formulario */
+    height: auto;
+    overflow: hidden;
+    border: #ccc solid 1px;
+    padding: 15px;
+    float: none; /* Evitar float para un mejor control del layout */
 } /* Estilos para un contenedor de formulario. */
 
 .Contenedor { /* Estilos para un contenedor principal que alinea formulario */
@@ -149,9 +151,7 @@ display : flex; /* Utiliza flexbox. */
 justify-content : center; /* Centra los elementos horizontalmente. */
 align-items : flex-start; /* Alinea los elementos en la parte superior. */
 }
-.Formulario { /* Estilos comunes para el formulario. */
-margin : 20px; /* Margen de 20 píxeles. */
-}
+
 .Formulario input[type="text"], .Formulario textarea { /* Estilos para los campos de texto y área de texto en el formulario. */
 width : 100%; /* Ancho del 100%. */
 padding : 9px; /* Relleno de 9 píxeles. */
@@ -384,7 +384,7 @@ height : 300px; /* Altura más pequeña. */
 .slider-images-wrapper img { /* Imágenes del carrusel en móviles. */
 max-width : 100%; /* Ancho máximo completo. */
 max-height : 100%; /* Altura máxima completa. */
-}
+.product-grid { flex-direction: column; align-items: center; }
 .history-wrapper h2 { /* Título de historia en móviles. */
 font-size : 1.5rem; /* Tamaño de fuente más pequeño. */
 }
@@ -393,7 +393,7 @@ font-size : 0.9rem; /* Tamaño de fuente más pequeño. */
 }
 .container { /* Contenedor en móviles. */
 width : 100%; /* Ancho completo. */
-padding : 1000px; /* Relleno más pequeño. */
+padding: 15px; /* Relleno más pequeño. */
 }
 }
 @media (min-width: 768px) and (max-width: 1024px) { /* Media query para tablets. */
@@ -465,9 +465,7 @@ font-size : 28px; /* Tamaño de fuente más pequeño. */
 .header p { /* Párrafo de cabecera en móviles. */
 font-size : 18px; /* Tamaño de fuente más pequeño. */
 }
-.product-grid { /* Cuadrícula de productos en móviles. */
-flex-direction : column; /* Apilado vertical. */
-}
+
 .nav-links { /* Enlaces de navegación en móviles. */
 display : none; /* Oculto por defecto. */
 position : absolute; /* Posición absoluta. */
@@ -509,12 +507,11 @@ display : none; /* No se muestra. */
 }
 
 @media (max-width: 600px) { /* Media query para pantallas de 600px o menos. */
-    .table { /* Tabla. */
+    #maintenanceTable, .table { /* Tabla. */
         font-size: 0.7rem; /* Fuente más pequeña en móviles */
-    }
-
-    .btn { /* Botón. */
-        width: 100%; /* Botón a ancho completo en móviles */
+        display: block;
+        overflow-x: auto; /* Permite scroll horizontal en la tabla */
+        white-space: nowrap;
     }
 }
 
@@ -533,7 +530,7 @@ display : none; /* No se muestra. */
 
 /* Contenedor del formulario */
 form {
-    max-width: 500px; /* Ancho máximo */
+    max-width: 600px; /* Ancho máximo */
     margin: 30px auto; /* Centrado y espacio vertical */
     padding: 30px 25px; /* Espaciado interno */
     border-radius: 15px; /* Bordes redondeados */
@@ -616,7 +613,7 @@ button:hover {
 
 /* Tabla de registros */
 #maintenanceTable {
-    width: 95%; /* Ancho de la tabla */
+    width: 100%; /* Ancho de la tabla */
     margin: 20px auto; /* Centrado y espacio vertical */
     border-collapse: collapse; /* Sin separación entre celdas */
     background: #ffffff; /* Cambiado a fondo blanco */
@@ -627,15 +624,11 @@ button:hover {
 }
 #maintenanceTable th,
 #maintenanceTable td {
-    border: 2px solid #283593; /* Borde azul */
-    padding: 6px 4px;      /* Menos espacio interno */
+    border: 1px solid #ddd; /* Borde más sutil */
+    padding: 12px 15px;      /* Espacio interno más balanceado */
     text-align: center; /* Centra el texto */
     vertical-align: middle; /* Centra verticalmente */
-    font-size: 0.70em;     /* Fuente más pequeña */
-    word-break: break-word; /* Rompe palabras largas */
-    background-color: #f3f4f6; /* Fondo gris claro */
-    min-width: 70px;       /* Ancho mínimo reducido */
-    max-width: 70px;      /* Ancho máximo reducido */
+    font-size: 0.9em;     /* Fuente legible */
     line-height: 1.2;      /* Menor altura de línea */
 }
 #maintenanceTable th {
@@ -705,4 +698,5 @@ input[type="date"]:invalid {
     border: none;
     padding: 0;
     box-shadow: none;
+}
 }
