@@ -265,7 +265,7 @@ background-color: #0c169e; /* Añade un color de fondo sólido. */
 position : absolute; /* Posición absoluta. */
 top : 60px; /* A 60px de la parte superior. */
 left : 0; /* A la izquierda. */
-width : 13%; /* Ocupa todo el ancho para una mejor apariencia. */
+width : 80%; /* Ocupa el 80% del ancho para una mejor apariencia en móviles. */
 height : calc(100vh - 60px); /* Altura completa de la ventana. */
 padding : 1rem; /* Relleno. */
 z-index : 10; /* Se superpone a otros elementos. */
@@ -490,7 +490,7 @@ cursor : pointer; /* Cursor de mano. */
 margin-left : 0; /* Sin margen izquierdo. */
 }
 .nav-links.open {
-    width: 250px; /* Un ancho fijo para el menú lateral */
+    width: 80%; /* Un ancho adaptable para el menú lateral */
 }
 .productos .col-md-5 {
     flex: 0 0 auto; /* Evita que las columnas se estiren demasiado */
