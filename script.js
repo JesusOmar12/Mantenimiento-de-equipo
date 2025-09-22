@@ -42,12 +42,12 @@ function updateDashboard(snapshot) {
     // Convertir a array y ordenar por fecha descendente para obtener los más recientes primero
     const records = Object.values(data).sort((a, b) => new Date(b.Fecha_de_Mantenimiento) - new Date(a.Fecha_de_Mantenimiento));
 
-    // 1. Total de mantenimientos
+    // Total de mantenimientos
     if (totalMantenimientosEl) {
         totalMantenimientosEl.textContent = records.length;
     }
 
-    // 2. Mantenimientos por tipo
+    // Mantenimientos por tipo
     if (porTipoEl) {
         const counts = records.reduce((acc, record) => {
             const tipo = record.Tipo_de_Mantenimiento || 'No especificado';
@@ -76,14 +76,14 @@ function updateDashboard(snapshot) {
                         label: 'Mantenimientos por Tipo',
                         data: data,
                         backgroundColor: [ // Colores para cada sección
-                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(255, 115, 0, 1)',
                             'rgba(54, 162, 235, 0.7)',
                             'rgba(255, 206, 86, 0.7)',
                             'rgba(75, 192, 192, 0.7)',
                             'rgba(153, 102, 255, 0.7)',
                         ],
                         borderColor: [
-                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 81, 0, 1)',
                             'rgba(54, 162, 235, 1)',
                             'rgba(255, 206, 86, 1)',
                             'rgba(75, 192, 192, 1)',
@@ -116,13 +116,13 @@ function updateDashboard(snapshot) {
         }
     }
 
-    // 3. Últimos 1000 registros
+    // Últimos 1000 registros
     if (ultimosRegistrosEl) {
-        const ultimos5 = records.slice(0, 1000);
-        if (ultimos5.length > 0) {
+        const ultimos = records.slice(0, 1000000000000000000);
+        if (ultimos.length > 0) {
             ultimosRegistrosEl.innerHTML = `
                 <ul class="list-group list-group-flush">
-                    ${ultimos5.map(rec => `
+                    ${ultimos.map(rec => `
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             ${rec.Nombre_del_Equipo} (${rec.Tipo_de_Mantenimiento})
                             <span class="badge bg-secondary rounded-pill">${rec.Fecha_de_Mantenimiento}</span>
