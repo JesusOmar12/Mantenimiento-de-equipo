@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /* Importa la fuente Raleway desde Google Fonts. */
+body { /* Estilos para el cuerpo del documento. */
+    font-family: 'Raleway', Arial, sans-serif; /* Define la familia de fuentes principal. */
+    margin: 0; /* Elimina el margen exterior. */
+    background-color: #ffffff;
+    padding: 0; /* Elimina el relleno interior. */
+}
+.navbar a:hover, .navbar a.active { /* Estilos para los enlaces de la barra de navegación al pasar el mouse o cuando están activos. */
+border-color : #000000b2; /* Cambia el color del borde inferior. */
+}
+.logo { /* Estilos para el logo. */
+color : white; /* Color del texto blanco. */
+font-size : 24px; /* Tamaño de la fuente de 24 píxeles. */
+font-weight : bold; /* Fuente en negrita. */
+}
+.header { /* Estilos para la sección de la cabecera. */
+background-color: #ffffff; /* Cambiado a color de fondo blanco. */
+background-size : cover; /* La imagen de fondo cubre todo el contenedor. */
+color : rgb(0, 0, 0, 0.76); /* Color del texto con transparencia. */
+text-align : center; /* Alineación del texto al centro. */
+padding : 20px; /* Relleno de 20 píxeles. */
+overflow : hidden; /* Oculta el contenido que se desborda. */
+white-space : nowrap; /* Evita que el texto se divida en varias líneas. */
+border-right : 0.15em solid rgb(228, 241, 156); /* Borde derecho para simular un cursor de escritura. */
+animation : typing 5s steps(40,end), blink-caret 0.75s step-end infinite; /* Aplica las animaciones de escritura y parpadeo del cursor. */
+}
+.header h1 { /* Estilos para el título principal en la cabecera. */
+font-size : 48px; /* Tamaño de la fuente de 48 píxeles. */
+margin-bottom : 10px; /* Margen inferior de 10 píxeles. */
+}
+.header p { /* Estilos para el párrafo en la cabecera. */
+font-size : 24px; /* Tamaño de la fuente de 24 píxeles. */
+}
+.productos { /* Estilos para la sección de productos. */
+padding : 50px 20px; /* Relleno superior/inferior de 50px y lateral de 20px. */
+background-color: #ffffff; /* Añadido color de fondo blanco. */
+text-align : center; /* Alineación del texto al centro. */
+}
+.productos h2 { /* Estilos para el título de la sección de productos. */
+font-size : 32px; /* Tamaño de la fuente de 32 píxeles. */
+margin-bottom : 30px; /* Margen inferior de 30 píxeles. */
+}
+.product-grid { /* Estilos para la cuadrícula de productos. */
+display : flex; /* Utiliza el modelo de caja flexible (flexbox). */
+justify-content : center; /* Centra los elementos horizontalmente. */
+gap : 30px; /* Espacio de 30 píxeles entre los elementos. */
+}
+.product-item { /* Estilos para cada elemento de producto. */
+border : #ddd solid 1px; /* Borde sólido de 1 píxel de color gris claro. */
+padding : 20px; /* Relleno de 20 píxeles. */
+width : 200px; /* Ancho de 200 píxeles. */
+text-align : center; /* Alineación del texto al centro. */
+}
+.product-item img { /* Estilos para las imágenes de los productos. */
+width : 100%; /* Ancho del 100% del contenedor. */
+height : 250px; /* Altura fija de 250 píxeles. */
+object-fit : cover; /* La imagen cubre el contenedor manteniendo su relación de aspecto. */
+}
+@keyframes typing { /* Define la animación de escritura. */
+from { /* Estado inicial de la animación. */
+width : 0; /* Ancho inicial de 0. */
+}
+to { /* Estado final de la animación. */
+width : 100%; /* Ancho final del 100%. */
+}
+}
+@keyframes blink-caret { /* Define la animación de parpadeo del cursor. */
+from, to { /* Estados inicial y final de la animación. */
+border-color : transparent; /* El color del borde es transparente. */
+}
+50% { /* A la mitad de la animación. */
+border-color : rgb(228, 241, 156); /* El color del borde cambia para simular el parpadeo. */
+}
+}
+.product-item h3 { /* Estilos para los títulos de los productos. */
+font-size : 20px; /* Tamaño de la fuente de 20 píxeles. */
+margin : 10px 0; /* Margen superior/inferior de 10px y lateral de 0. */
+}
+.product-item p { /* Estilos para los párrafos de los productos. */
+font-size : 18px; /* Tamaño de la fuente de 18 píxeles. */
+color : #333; /* Color del texto gris oscuro. */
+}
+.product-item button { /* Estilos para los botones de los productos. */
+background-color : #021b59; /* Color de fondo azul oscuro. */
+color : white; /* Color del texto blanco. */
+border : none; /* Sin borde. */
+padding : 10px 20px; /* Relleno de 10px arriba/abajo y 20px a los lados. */
+cursor : pointer; /* El cursor cambia a una mano al pasar sobre el botón. */
+}
+.product-item button:hover { /* Estilos para el botón del producto al pasar el mouse. */
+background-color : #ffffff; /* Cambia el color de fondo a un gris más oscuro. */
+}
+footer { /* Estilos para el pie de página. */
+background-color : #101272; /* Color de fondo azul. */
+color : white; /* Color del texto blanco. */
+text-align : center; /* Alineación del texto al centro. */
+padding : 20px; /* Relleno de 20 píxeles. */
+}
+
+* { /* Selector universal que se aplica a todos los elementos. */
+margin : 0; /* Elimina todos los márgenes. */
+padding : 0; /* Elimina todos los rellenos. */
+vertical-align : baseline; /* Alinea verticalmente los elementos a la línea de base. */
+}
+.logo { /* Estilos adicionales para el logo. */
+margin-left : 40px; /* Margen izquierdo de 40 píxeles. */
+}
+.container { /* Estilos para un contenedor genérico. */
+width : 100px; /* Ancho de 100 píxeles. */
+overflow : hidden; /* Oculta el contenido que se desborda. */
+}
+.imagen-flotante { /* Estilos para una imagen flotante. */
+float : left; /* Hace que la imagen flote a la izquierda. */
+margin-right : 10px; /* Margen derecho de 10 píxeles. */
+}
+.title { /* Estilos para un título genérico. */
+margin-bottom : 40px; /* Margen inferior de 40 píxeles. */
+font-size : 30px; /* Tamaño de la fuente de 30 píxeles. */
+font-weight : 600; /* Grosor de la fuente semi-negrita. */
+text-transform : uppercase; /* Transforma el texto a mayúsculas. */
+}
+p { /* Estilos para los párrafos. */
+margin-bottom : 50px; /* Margen inferior de 50 píxeles. */
+font-size : 15px; /* Tamaño de la fuente de 15 píxeles. */
+}    
+.btn { /* Estilos para un botón genérico. */
+display : inline-block; /* Se muestra como un bloque en línea. */
+margin-top : 20px; /* Margen superior de 20 píxeles. */
+padding : 10px 40px; /* Relleno de 10px arriba/abajo y 40px a los lados. */
+border : #000000 solid 2px; /* Borde sólido negro de 2 píxeles. */
+border-radius : 4px; /* Bordes redondeados de 4 píxeles. */
+color : #fff; /* Color del texto blanco. */
+text-decoration : none; /* Sin decoración de texto. */
+background : #000000; /* Fondo negro. */
+}
+.btn-hover { /* Estilo para un botón con efecto hover. */
+background : none; /* Sin fondo. */
+}
+.btn-home { /* Estilos para un contenedor de botones de inicio. */
+display : flex; /* Utiliza flexbox. */
+}
+.btn-home a { /* Estilos para los enlaces dentro del contenedor de botones de inicio. */
+margin : 0 15px; /* Margen lateral de 15 píxeles. */
+}
+.content { /* Estilos para un contenedor de contenido principal. */
+height : 60vh; /* Altura del 60% de la altura de la ventana. */
+display : flex; /* Utiliza flexbox. */
+flex-direction : column; /* Los elementos se apilan verticalmente. */
+justify-content : center; /* Centra los elementos verticalmente. */
+align-items : center; /* Centra los elementos horizontalmente. */
+}
+.Formulario {
+width : 440px;
+height : auto;
+overflow : hidden;
+border : #ccc solid 1px;
+padding : 5px;
+float : left;
+} /* Estilos para un contenedor de formulario. */
+
+.Contenedor { /* Estilos para un contenedor principal que alinea formulario */
+display : flex; /* Utiliza flexbox. */
+justify-content : center; /* Centra los elementos horizontalmente. */
+align-items : flex-start; /* Alinea los elementos en la parte superior. */
+}
+.Formulario { /* Estilos comunes para el formulario. */
+margin : 20px; /* Margen de 20 píxeles. */
+}
+.Formulario input[type="text"], .Formulario textarea { /* Estilos para los campos de texto y área de texto en el formulario. */
+width : 100%; /* Ancho del 100%. */
+padding : 9px; /* Relleno de 9 píxeles. */
+margin-bottom : 10px; /* Margen inferior de 10 píxeles. */
+box-sizing : border-box; /* El padding y el borde se incluyen en el ancho total. */
+border : #000000 solid 2px; /* Borde sólido gris claro de 1 píxel. */
+}
+.Formulario input[type="submit"] { /* Estilos para el botón de envío del formulario. */
+background-color : #000000; /* Fondo negro. */
+color : white; /* Texto blanco. */
+padding : 10px 20px; /* Relleno. */
+border : 14px; /* Borde de 14 píxeles (probablemente un error, debería ser 'none' o un valor con unidad). */
+border-radius : 4px; /* Bordes redondeados. */
+cursor : pointer; /* Cursor de mano. */
+}
+.ContenedorImagenes img { /* Estilos para imágenes dentro de un contenedor de imágenes. */
+width : 200px; /* Ancho de 200 píxeles. */   
+margin : 0 20px; /* Margen lateral de 20 píxeles. */    
+}
+.ContenedorImagenes { /* Estilos para el contenedor de imágenes. */
+display : flex; /* Utiliza flexbox. */
+justify-content : space-between; /* Distribuye el espacio entre los elementos. */
+align-items : center; /* Centra los elementos verticalmente. */
+margin-bottom : 10px; /* Margen inferior de 10 píxeles. */
+text-align : center; /* Alineación del texto al centro. */
+}
+.carousel-inner img { /* Estilos para las imágenes dentro de un carrusel de Bootstrap. */
+max-width : 100%; /* Ancho máximo del 100%. */
+margin : auto; /* Centrado horizontalmente. */
+height : 800px; /* Altura fija de 500 píxeles. */
+object-fit : cover; /* La imagen cubre el espacio. */
+}
+.carousel-caption { /* Estilos para la leyenda del carrusel. */
+background-color : rgb(0, 0, 0, 0.5); /* Fondo negro semitransparente. */
+border-radius : 10px; /* Bordes redondeados. */
+}
+.navbar { /* Estilos para la barra de navegación. */
+position : relative; /* Posicionamiento relativo. */
+cursor : pointer; /* Cursor de mano. */
+}
+.modal-content { /* Estilos para el contenido de un modal. */
+background-color : #60c5f3; /* Color de fondo azul claro. */
+border : none; /* Sin borde. */
+border-radius : 0.5rem; /* Bordes redondeados. */
+overflow : hidden; /* Oculta el desbordamiento. */
+}
+.modal-body { /* Cuerpo del modal. */
+padding : 1.5rem !important ; /* Relleno (con !important para sobreescribir Bootstrap). */
+}
+.form-control { /* Estilos para los controles de formulario de Bootstrap. */
+padding : 0.75rem 1rem; /* Relleno. */
+border-radius : 0.5rem; /* Bordes redondeados. */
+border : #fafafb solid 1px; /* Borde. */
+}
+.form-control:focus { /* Estilo del control de formulario cuando tiene el foco. */
+border-color : #0a0b0b; /* Color del borde. */
+box-shadow : 0 0 0 0.25rem rgb(13, 110, 253, 0.25); /* Sombra exterior. */
+}
+.btn-container { /* Contenedor para botones. */
+display : flex; /* Utiliza flexbox. */
+flex-direction : column; /* Apila los botones verticalmente. */
+gap : 1rem; /* Espacio entre botones. */
+width : 100%; /* Ancho completo. */
+margin-top : 1.5rem; /* Margen superior. */
+}
+
+.divider::before, .divider::after { /* Líneas a los lados del texto divisor. */
+content : ""; /* Contenido vacío, necesario para pseudo-elementos. */
+position : absolute; /* Posición absoluta. */
+top : 50%; /* A la mitad de la altura. */
+width : 45%; /* Ancho del 45%. */
+height : 1px; /* Altura de 1 píxel. */
+background-color : rgb(111, 66, 66); /* Color de fondo. */
+}
+.divider::before { /* Línea izquierda. */
+left : 0; /* Alineada a la izquierda. */
+}
+.divider::after { /* Línea derecha. */
+right : 0; /* Alineada a la derecha. */
+}
+.remember-me { /* Estilos para la casilla "Recuérdame". */
+margin-bottom : 1.5rem; /* Margen inferior. */
+}
+
+.icon-link { /* Estilos para un enlace con ícono. */
+display : flex; /* Utiliza flexbox. */
+flex-direction : column; /* Apila los elementos verticalmente. */
+align-items : center; /* Centra horizontalmente. */
+text-decoration : none; /* Sin subrayado. */
+color : #fff; /* Color de texto blanco. */
+font-size : 0.8rem; /* Tamaño de fuente. */
+}
+.icon-link i { /* Ícono dentro del enlace. */
+font-size : 2rem; /* Tamaño del ícono. */
+margin-bottom : 0.5rem; /* Margen inferior. */
+}
+@media (min-width: 3025px) { /* Media query para pantallas muy grandes. */
+.nav-links { /* Muestra los enlaces de navegación. */
+display : flex; /* Utiliza flexbox. */
+gap : 1rem; /* Espacio entre enlaces. */
+}
+.navbar-toggler { /* Oculta el botón de menú hamburguesa. */
+display : none; /* No se muestra. */
+}
+}
+.nav-links.open { /* Estilos para el menú de navegación cuando está abierto (en móviles). */
+display : flex; /* Se muestra como flexbox. */
+flex-direction : column; /* Apilado verticalmente. */
+align-items : flex-start; /* Alineado a la izquierda. */
+background-color: #0d76a6; /* Añade un color de fondo sólido. */
+position : absolute; /* Posición absoluta. */
+top : 60px; /* A 60px de la parte superior. */
+left : 0; /* A la izquierda. */
+width : 13%; /* Ocupa todo el ancho para una mejor apariencia. */
+height : 100vh; /* Altura completa de la ventana. */
+padding : 1rem; /* Relleno. */
+z-index : 10; /* Se superpone a otros elementos. */
+}
+.navbar { /* Redefinición de estilos para la barra de navegación. */
+background-color : #101272; /* Fondo azul. */
+color : white; /* Texto blanco. */
+padding : 1rem; /* Relleno. */
+display : flex; /* Utiliza flexbox. */
+justify-content : space-between; /* Espacio entre elementos. */
+align-items : center; /* Centrado vertical. */
+}
+.nav-links { /* Redefinición de los enlaces de navegación. */
+display : none; /* Oculto por defecto (para móviles). */
+list-style : none; /* Sin viñetas. */
+padding : 0; /* Sin relleno. */
+margin : 0; /* Sin margen. */
+flex-wrap: wrap; /* Permite que los elementos se envuelvan. */
+}
+.nav-links li { /* Elementos de la lista de navegación. */
+margin : 0; /* Elimina el margen vertical para juntar las opciones. */
+}   
+.nav-links a { /* Enlaces de navegación. */
+color : #ffffff; /* Cambiado a blanco para que contraste con el fondo azul. */
+text-decoration : none; /* Sin subrayado. */
+font-size : 1.2rem; /* Tamaño de fuente. */
+display : block; /* Se muestra como un bloque. */
+padding : 0.5rem; /* Relleno. */
+}
+.navbar-toggler { /* Botón de menú hamburguesa. */
+background : none; /* Sin fondo. */
+border : none; /* Sin borde. */
+color : #ffffff !important; /* Color del ícono siempre blanco. */
+font-size : 0.75rem; /* Tamaño de fuente. */
+}
+.modal-content { /* Redefinición del contenido del modal. */
+padding : 20px; /* Relleno. */
+}
+.btn-success { /* Estilos para botones de éxito de Bootstrap. */
+background-color : white; /* Fondo blanco. */
+color : #ffffff; /* Texto negro. */
+}
+.modal-body table { /* Tabla dentro del cuerpo de un modal. */
+width : 100%; /* Ancho completo. */
+}
+.modal-body th, .modal-body td { /* Celdas de la tabla en el modal. */
+padding : 0.5rem; /* Relleno. */
+text-align : left; /* Alineación a la izquierda. */
+text-align : center; /* Sobrescribe la anterior, alineando al centro. */
+vertical-align : middle; /* Alineación vertical al medio. */
+}
+.modal-body img { /* Imágenes en el cuerpo del modal. */
+max-width : 50px; /* Ancho máximo de 50 píxeles. */
+}
+.modal-dialog { /* Diálogo del modal. */
+max-width : 800px; /* Ancho máximo de 800 píxeles. */
+}
+.btn-danger { /* Botón de peligro de Bootstrap. */
+display : inline-block; /* Se muestra como bloque en línea. */
+margin : 0 auto; /* Centrado horizontalmente. */
+}
+.container { /* Redefinición del contenedor. */
+width : 100%; /* Ancho del 90%. */
+max-width : 1200px; /* Ancho máximo de 1200 píxeles. */
+margin : 0 auto; /* Centrado horizontalmente. */
+padding : 20px; /* Relleno. */
+}
+.slider-wrapper { /* Contenedor del carrusel. */
+position : relative; /* Posicionamiento relativo. */
+overflow : hidden; /* Oculta el desbordamiento. */
+text-align : center; /* Texto centrado. */
+color : white; /* Color de texto blanco. */
+background-color: #ffffff; /* Fondo blanco para la sección del carrusel */
+}
+.cd-headline { /* Título animado. */
+font-size : 1.8rem; /* Tamaño de fuente. */
+margin-top : 10px; /* Margen superior. */
+}
+.cd-words-wrapper b { /* Palabras que se animan. */
+display : inline-block; /* Se muestra como bloque en línea. */
+font-weight : 400; /* Grosor de fuente normal. */
+color : #0d76a6; /* Color de texto azul. */
+animation : changeWords 3s infinite; /* Animación de cambio de palabras. */
+}
+@keyframes changeWords { /* Animación para cambiar palabras. */
+0%, 100% { opacity : 0; } /* Invisible al inicio y al final. */
+25%, 75% { opacity : 1; } /* Visible en el medio. */
+}
+.slider-images-wrapper { /* Contenedor de las imágenes del carrusel. */
+width : 100%; /* Ancho completo. */
+position : relative; /* Posicionamiento relativo. */
+height : auto; /* Altura automática. */
+}
+.slider-images-wrapper .item { /* Cada elemento del carrusel. */
+object-fit : contain; /* La imagen se ajusta dentro del contenedor. */
+animation : slideIn 6s infinite; /* Animación de deslizamiento. */
+display : flex; /* Utiliza flexbox. */
+justify-content : center; /* Centra horizontalmente. */
+align-items : center; /* Centra verticalmente. */
+height : 600px; /* Altura fija. */
+}
+.slider-images-wrapper img { /* Imágenes del carrusel. */
+width: 100%; /* Ancho completo del contenedor. */
+height: 100%; /* Altura completa del contenedor. */
+object-fit: contain; /* La imagen se ajusta para ser completamente visible. */
+}
+
+@media (max-width: 767px) { /* Otra media query para móviles (redundante). */
+.navbar { /* Barra de navegación en móviles. */
+flex-direction : column; /* Apilado vertical. */
+align-items : flex-start; /* Alineado a la izquierda. */
+}
+.slider-images-wrapper { /* Contenedor de imágenes del carrusel en móviles. */
+height : 300px; /* Altura más pequeña. */
+}
+.slider-images-wrapper img { /* Imágenes del carrusel en móviles. */
+max-width : 100%; /* Ancho máximo completo. */
+max-height : 100%; /* Altura máxima completa. */
+}
+.history-wrapper h2 { /* Título de historia en móviles. */
+font-size : 1.5rem; /* Tamaño de fuente más pequeño. */
+}
+.history-wrapper p { /* Párrafo de historia en móviles. */
+font-size : 0.9rem; /* Tamaño de fuente más pequeño. */
+}
+.container { /* Contenedor en móviles. */
+width : 100%; /* Ancho completo. */
+padding : 1000px; /* Relleno más pequeño. */
+}
+}
+@media (min-width: 768px) and (max-width: 1024px) { /* Media query para tablets. */
+.navbar { /* Barra de navegación en tablets. */
+padding : 1rem 2rem; /* Más relleno lateral. */
+}
+.slider-images-wrapper { /* Contenedor de imágenes del carrusel en tablets. */
+height : 400px; /* Altura intermedia. */
+}
+.history-wrapper h2 { /* Título de historia en tablets. */
+font-size : 2rem; /* Tamaño de fuente. */
+}
+.history-wrapper p { /* Párrafo de historia en tablets. */
+font-size : 1rem; /* Tamaño de fuente. */
+}
+.container { /* Contenedor en tablets. */
+width : 95%; /* Ancho del 95%. */
+}
+}
+@media (min-width: 1025px) and (max-width: 1920px) { /* Media query para escritorios. */
+.navbar { /* Barra de navegación en escritorios. */
+padding : 1.5rem 3rem; /* Aún más relleno. */
+}
+.slider-images-wrapper { /* Contenedor de imágenes del carrusel en escritorios. */
+height : 500px; /* Altura mayor. */
+}
+.slider-description h1 { /* Título del carrusel en escritorios. */
+font-size : 2.5rem; /* Tamaño de fuente. */
+}
+.history-wrapper { /* Contenedor de historia en escritorios. */
+gap : 40px; /* Más espacio. */
+}
+.history-wrapper h2 { /* Título de historia en escritorios. */
+font-size : 2.5rem; /* Tamaño de fuente. */
+}
+.history-wrapper p { /* Párrafo de historia en escritorios. */
+font-size : 1.1rem; /* Tamaño de fuente. */
+}
+}
+@media (min-width: 1921px) { /* Media query para pantallas muy grandes. */
+.slider-images-wrapper { /* Contenedor de imágenes del carrusel. */
+height : 700px; /* Altura aún mayor. */
+}
+.slider-description h1 { /* Título del carrusel. */
+font-size : 3.5rem; /* Tamaño de fuente. */
+}
+.history-wrapper h2 { /* Título de historia. */
+font-size : 3rem; /* Tamaño de fuente. */
+}
+.history-wrapper p { /* Párrafo de historia. */
+font-size : 1.2rem; /* Tamaño de fuente. */
+}
+}
+.product-item { /* Redefinición de item de producto. */
+border : #ddd solid 1px; /* Borde. */
+padding : 20px; /* Relleno. */
+width : 200px; /* Ancho. */
+text-align : center; /* Texto centrado. */
+}
+.product-item img { /* Imagen del item de producto. */
+width : 100%; /* Ancho completo. */
+height : 250px; /* Altura fija. */
+object-fit : cover; /* La imagen cubre el espacio. */
+}
+@media (max-width: 767px) { /* Media query para móviles. */
+.header h1 { /* Título de cabecera en móviles. */
+font-size : 28px; /* Tamaño de fuente más pequeño. */
+}
+.header p { /* Párrafo de cabecera en móviles. */
+font-size : 18px; /* Tamaño de fuente más pequeño. */
+}
+.product-grid { /* Cuadrícula de productos en móviles. */
+flex-direction : column; /* Apilado vertical. */
+}
+.nav-links { /* Enlaces de navegación en móviles. */
+display : none; /* Oculto por defecto. */
+position : absolute; /* Posición absoluta. */
+top : 60px; /* A 60px de arriba. */
+left : 0; /* A la izquierda. */
+width : 100%; /* Ancho completo. */
+background-color : #0d76a6; /* Fondo azul. */
+z-index : 10; /* Se superpone. */
+}
+.nav-links.open { /* Cuando el menú está abierto. */
+display : block; /* Se muestra como bloque. */
+}
+.navbar-toggler { /* Botón de menú hamburguesa. */
+display : block; /* Se muestra. */
+color : white; /* Color blanco. */
+font-size : 1.5rem; /* Tamaño de fuente. */
+cursor : pointer; /* Cursor de mano. */
+}
+.logo { /* Logo en móviles. */
+margin-left : 0; /* Sin margen izquierdo. */
+}
+}
+@media (min-width: 1024px) { /* Media query para pantallas de 1024px o más. */
+.navbar { /* Barra de navegación. */
+padding : 1.5rem 2rem; /* Más relleno. */
+}
+.product-item { /* Item de producto. */
+width : 250px; /* Ancho mayor. */
+}
+}
+@media (min-width: 3025px) { /* Media query para pantallas muy grandes. */
+.nav-links { /* Enlaces de navegación. */
+display : flex; /* Se muestran como flexbox. */
+gap : 1rem; /* Espacio. */
+}
+.navbar-toggler { /* Se oculta el botón de menú. */
+display : none; /* No se muestra. */
+}
+}
+
+@media (max-width: 600px) { /* Media query para pantallas de 600px o menos. */
+    .table { /* Tabla. */
+        font-size: 0.7rem; /* Fuente más pequeña en móviles */
+    }
+
+    .btn { /* Botón. */
+        width: 100%; /* Botón a ancho completo en móviles */
+    }
+}
+
+.redes a { /* Enlaces en el contenedor */
+    display: inline-block; /* Se muestra como bloque en línea. */
+    width: 40px; /* Ancho. */
+    height: 40px; /* Altura. */
+    border-radius: 50%; /* Forma circular. */
+    text-align: center; /* Texto centrado. */
+    line-height: 40px; /* Altura de línea igual a la altura para centrar verticalmente. */
+    margin: 0 10px; /* Margen lateral. */
+    color: white; /* Color de texto blanco. */
+    text-decoration: none; /* Sin subrayado. */
+}
+
+
+/* Contenedor del formulario */
+form {
+    max-width: 500px; /* Ancho máximo */
+    margin: 30px auto; /* Centrado y espacio vertical */
+    padding: 30px 25px; /* Espaciado interno */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08); /* Sombra */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Columnas */
+    gap: 15px; /* Espacio entre elementos */
+    border: 1px solid #424549; /* Borde gris */
+}
+
+/* Etiquetas del formulario */
+form label,
+label[for="nombre"], label[for="fecha"], label[for="tipo"] {
+    font-weight: 600; /* Negrita */
+    color: #333; /* Color de texto */
+    margin-bottom: 6px; /* Espacio inferior */
+    font-size: 1.1em; /* Tamaño de fuente */
+    letter-spacing: 0.3px; /* Espaciado entre letras */
+}
+
+/* Campos de entrada y selectores */
+input[type="text"], input[type="date"], select {
+    padding: 15px 16px; /* Espaciado interno */
+    background: #ffffff; /* Fondo blanco */
+    border: 2px solid #50585f; /* Borde gris */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 1.1em; /* Tamaño de fuente */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
+    box-sizing: border-box; /* Incluye el borde en el tamaño */
+}
+
+input[type="text"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #1976d2; /* Borde azul al enfocar */
+    outline: none; /* Sin contorno extra */
+    box-shadow: 0 0 8px rgba(25, 118, 210, 0.2); /* Sombra azul */
+}
+
+/* Estilo para los placeholders y selects inválidos */
+input[type="text"]::placeholder, input[type="date"]::placeholder, select:invalid {
+    color: #636363; /* Color gris para el placeholder */
+    opacity: 1; /* Opacidad total */
+}
+
+/* Botón principal */
+button {
+    background: linear-gradient(90deg, #df9c0c 100%); /* Fondo degradado azul */
+    color: #fff; /* Texto blanco */
+    padding: 14px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    margin-top: 14px; /* Espacio superior */
+    font-size: 1.15em; /* Tamaño de fuente */
+    font-weight: 600; /* Negrita */
+    letter-spacing: 0.6px; /* Espaciado entre letras */
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transiciones suaves */
+    box-shadow: 0 3px 15px rgba(44, 62, 80, 0.1); /* Sombra */
+}
+
+/* Efecto hover para el botón */
+button:hover {
+    background: linear-gradient(90deg, #ff7300e8 100%); /* Fondo degradado naranja */
+    transform: translateY(-3px) scale(1.05); /* Eleva y agranda el botón */
+    box-shadow: 0 5px 20px rgb(226, 124, 8); /* Sombra naranja */
+}
+
+/* Botón de eliminar */
+.eliminar {
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */    
+    color: #d32f2f; /* Rojo */
+    font-size: 1em; /* Tamaño de fuente reducido */
+    cursor: pointer; /* Cursor de mano */
+    transition: color 0.2s; /* Transición de color */
+    padding: 6px 6px; /* Menos espaciado interno */
+}
+.eliminar:hover {
+    color: #b71c1c; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Tabla de registros */
+#maintenanceTable {
+    width: 95%; /* Ancho de la tabla */
+    margin: 20px auto; /* Centrado y espacio vertical */
+    border-collapse: collapse; /* Sin separación entre celdas */
+    background: #ffffff; /* Cambiado a fondo blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Sombra */
+    font-size: 1.05em; /* Tamaño de fuente */
+}
+#maintenanceTable th,
+#maintenanceTable td {
+    border: 2px solid #283593; /* Borde azul */
+    padding: 6px 4px;      /* Menos espacio interno */
+    text-align: center; /* Centra el texto */
+    vertical-align: middle; /* Centra verticalmente */
+    font-size: 0.70em;     /* Fuente más pequeña */
+    word-break: break-word; /* Rompe palabras largas */
+    background-color: #f3f4f6; /* Fondo gris claro */
+    min-width: 70px;       /* Ancho mínimo reducido */
+    max-width: 70px;      /* Ancho máximo reducido */
+    line-height: 1.2;      /* Menor altura de línea */
+}
+#maintenanceTable th {
+    background: linear-gradient(90deg, #ff7300e8 100%); /* Fondo degradado naranja */
+    color: #fff; /* Texto blanco */
+    font-weight: 700; /* Negrita */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+#maintenanceTable tr:nth-child(even) td {
+    background-color: #ffffff; /* Fondo blanco para filas pares */
+}
+#maintenanceTable tr:hover td {
+    background-color: #e8f0fe; /* Fondo azul claro al pasar el mouse */
+    transition: background 0.3s; /* Transición suave */
+}
+
+/* Mejora visual para el input de fecha */
+input[type="date"] {
+    position: relative; /* Posicionamiento relativo. */
+    background: #ffffff url('data:image/svg+xml;utf8,<svg fill="gray" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm0-13H5V6h14v1z"/></svg>') no-repeat right 12px center/22px 22px; /* Fondo blanco con un ícono de calendario SVG a la derecha. */
+    /* Icono de calendario a la derecha */
+    cursor: pointer; /* Cursor de mano. */
+}
+
+/* Cambia el color del texto del input de fecha cuando no hay valor */
+input[type="date"]:invalid {
+    color: #636363; /* Color de texto gris. */
+}
+
+/* Corrección para evitar parpadeo blanco en Owl Carousel con fadeOut */
+.owl-carousel .owl-item {
+    position: relative;
+}
+
+.owl-carousel .owl-item.active {
+    z-index: 1;
+}
+
+/* Estilo para la sección de opiniones */
+#opiniones {
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 30px; /* Añade un poco de espacio interno */
+    border-radius: 15px; /* Bordes redondeados para que coincida con el formulario */
+    margin-top: 20px; /* Espacio superior */
+}
