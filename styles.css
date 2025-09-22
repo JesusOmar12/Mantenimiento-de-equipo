@@ -74,7 +74,7 @@ border-color : rgb(228, 241, 156); /* El color del borde cambia para simular el 
 }
 .product-item h3 { /* Estilos para los títulos de los productos. */
 font-size : 20px; /* Tamaño de la fuente de 20 píxeles. */
-margin : 10px 0; /* Margen superior/inferior de 10px y lateral de 0. */
+margin : 0px 0; /* Margen superior/inferior de 10px y lateral de 0. */
 }
 .product-item p { /* Estilos para los párrafos de los productos. */
 font-size : 18px; /* Tamaño de la fuente de 18 píxeles. */
