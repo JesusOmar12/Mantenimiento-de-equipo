@@ -23,6 +23,8 @@ const form = document.getElementById('equipmentForm');
 const tableBody = document.querySelector('#maintenanceTable tbody');
 const dashboardStats = document.getElementById('dashboard-stats');
 
+let tipoMantenimientoChart = null; // Variable para almacenar la instancia del gráfico
+
 // Actualizar el dashboard con estadísticas
 function updateDashboard(snapshot) {
     const totalMantenimientosEl = document.getElementById('total-mantenimientos');
@@ -53,9 +55,51 @@ function updateDashboard(snapshot) {
             return acc;
         }, {});
 
-        porTipoEl.innerHTML = Object.entries(counts)
-            .map(([tipo, count]) => `<p><strong>${tipo}:</strong> ${count}</p>`)
-            .join('');
+        const chartCanvas = document.getElementById('tipoMantenimientoChart');
+        if (chartCanvas) {
+            const labels = Object.keys(counts);
+            const data = Object.values(counts);
+
+            // Si ya existe un gráfico, lo destruimos para crear uno nuevo
+            if (tipoMantenimientoChart) {
+                tipoMantenimientoChart.destroy();
+            }
+
+            tipoMantenimientoChart = new Chart(chartCanvas, {
+                type: 'doughnut', // Tipo de gráfico: dona
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Mantenimientos por Tipo',
+                        data: data,
+                        backgroundColor: [ // Colores para cada sección
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)',
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+        }
     }
 
     // 3. Últimos 5 registros
