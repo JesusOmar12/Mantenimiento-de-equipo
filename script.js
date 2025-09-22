@@ -118,7 +118,7 @@ function updateDashboard(snapshot) {
 
     // 3. Últimos 5 registros
     if (ultimosRegistrosEl) {
-        const ultimos5 = records.slice(0, 5);
+        const ultimos5 = records.slice(0, 1000);
         if (ultimos5.length > 0) {
             ultimosRegistrosEl.innerHTML = `
                 <ul class="list-group list-group-flush">
