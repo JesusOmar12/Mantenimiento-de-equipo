@@ -84,17 +84,8 @@ text-align : center; /* Alineación del texto al centro. */
 padding : 20px; /* Relleno de 20 píxeles. */
 }
 
-* { /* Selector universal que se aplica a todos los elementos. */
-margin : 0; /* Elimina todos los márgenes. */
-padding : 0; /* Elimina todos los rellenos. */
-vertical-align : baseline; /* Alinea verticalmente los elementos a la línea de base. */
-}
 .logo { /* Estilos adicionales para el logo. */
 margin-left : 40px; /* Margen izquierdo de 40 píxeles. */
-}
-.container { /* Estilos para un contenedor genérico. */
-width : 100px; /* Ancho de 100 píxeles. */
-overflow : hidden; /* Oculta el contenido que se desborda. */
 }
 .imagen-flotante { /* Estilos para una imagen flotante. */
 float : left; /* Hace que la imagen flote a la izquierda. */
@@ -367,11 +358,10 @@ height : auto; /* Altura automática. */
 }
 .slider-images-wrapper .item { /* Cada elemento del carrusel. */
 object-fit : contain; /* La imagen se ajusta dentro del contenedor. */
-animation : slideIn 6s infinite; /* Animación de deslizamiento. */
 display : flex; /* Utiliza flexbox. */
 justify-content : center; /* Centra horizontalmente. */
 align-items : center; /* Centra verticalmente. */
-height : 600px; /* Altura fija. */
+height : 400px; /* Altura unificada para el carrusel */
 }
 .slider-images-wrapper img { /* Imágenes del carrusel. */
 width: 100%; /* Ancho completo del contenedor. */
@@ -385,7 +375,7 @@ flex-direction : column; /* Apilado vertical. */
 align-items : flex-start; /* Alineado a la izquierda. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en móviles. */
-height : 300px; /* Altura más pequeña. */
+height : 250px; /* Altura más pequeña. */
 }
 .slider-images-wrapper img { /* Imágenes del carrusel en móviles. */
 max-width : 100%; /* Ancho máximo completo. */
@@ -407,7 +397,7 @@ padding : 15px; /* Relleno más pequeño. */
 padding : 1rem 2rem; /* Más relleno lateral. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en tablets. */
-height : 400px; /* Altura intermedia. */
+height : 350px; /* Altura intermedia. */
 }
 .history-wrapper h2 { /* Título de historia en tablets. */
 font-size : 2rem; /* Tamaño de fuente. */
@@ -424,7 +414,7 @@ width : 95%; /* Ancho del 95%. */
 padding : 1.5rem 3rem; /* Aún más relleno. */
 }
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel en escritorios. */
-height : 500px; /* Altura mayor. */
+height : 450px; /* Altura mayor. */
 }
 .slider-description h1 { /* Título del carrusel en escritorios. */
 font-size : 2.5rem; /* Tamaño de fuente. */
@@ -441,7 +431,7 @@ font-size : 1.1rem; /* Tamaño de fuente. */
 }
 @media (min-width: 1921px) { /* Media query para pantallas muy grandes. */
 .slider-images-wrapper { /* Contenedor de imágenes del carrusel. */
-height : 700px; /* Altura aún mayor. */
+height : 550px; /* Altura aún mayor. */
 }
 .slider-description h1 { /* Título del carrusel. */
 font-size : 3.5rem; /* Tamaño de fuente. */
@@ -499,6 +489,10 @@ margin-left : 0; /* Sin margen izquierdo. */
 .productos .col-md-5 {
     flex: 0 0 auto; /* Evita que las columnas se estiren demasiado */
 }
+.productos .row .col-md-5 {
+    flex-basis: 100%; /* En móvil, cada tarjeta ocupa el 100% del ancho */
+    max-width: 100%;
+}
 }
 @media (min-width: 1024px) { /* Media query para pantallas de 1024px o más. */
 .navbar { /* Barra de navegación. */
@@ -506,6 +500,10 @@ padding : 1.5rem 2rem; /* Más relleno. */
 }
 .product-item { /* Item de producto. */
 width : 250px; /* Ancho mayor. */
+}
+.productos .row .col-md-5 {
+    flex-basis: 41.666667%; /* Restaura el comportamiento de Bootstrap para pantallas más grandes */
+    max-width: 41.666667%;
 }
 }
 @media (min-width: 3025px) { /* Media query para pantallas muy grandes. */
