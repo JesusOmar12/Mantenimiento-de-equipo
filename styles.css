@@ -266,7 +266,7 @@ position : absolute; /* Posición absoluta. */
 top : 60px; /* A 60px de la parte superior. */
 left : 0; /* A la izquierda. */
 width : 13%; /* Ocupa todo el ancho para una mejor apariencia. */
-height : 100vh; /* Altura completa de la ventana. */
+height : calc(100vh - 60px); /* Altura completa de la ventana. */
 padding : 1rem; /* Relleno. */
 z-index : 10; /* Se superpone a otros elementos. */
 }
@@ -393,7 +393,7 @@ font-size : 0.9rem; /* Tamaño de fuente más pequeño. */
 }
 .container { /* Contenedor en móviles. */
 width : 100%; /* Ancho completo. */
-padding : 1000px; /* Relleno más pequeño. */
+padding : 15px; /* Relleno más pequeño. */
 }
 }
 @media (min-width: 768px) and (max-width: 1024px) { /* Media query para tablets. */
@@ -481,13 +481,19 @@ z-index : 10; /* Se superpone. */
 display : block; /* Se muestra como bloque. */
 }
 .navbar-toggler { /* Botón de menú hamburguesa. */
-display : block; /* Se muestra. */
+display : inline-block; /* Se muestra. */
 color : white; /* Color blanco. */
 font-size : 1.5rem; /* Tamaño de fuente. */
 cursor : pointer; /* Cursor de mano. */
 }
 .logo { /* Logo en móviles. */
 margin-left : 0; /* Sin margen izquierdo. */
+}
+.nav-links.open {
+    width: 250px; /* Un ancho fijo para el menú lateral */
+}
+.productos .col-md-5 {
+    flex: 0 0 auto; /* Evita que las columnas se estiren demasiado */
 }
 }
 @media (min-width: 1024px) { /* Media query para pantallas de 1024px o más. */
@@ -631,11 +637,9 @@ button:hover {
     padding: 6px 4px;      /* Menos espacio interno */
     text-align: center; /* Centra el texto */
     vertical-align: middle; /* Centra verticalmente */
-    font-size: 0.70em;     /* Fuente más pequeña */
+    font-size: 0.85em;     /* Fuente más pequeña */
     word-break: break-word; /* Rompe palabras largas */
     background-color: #f3f4f6; /* Fondo gris claro */
-    min-width: 70px;       /* Ancho mínimo reducido */
-    max-width: 70px;      /* Ancho máximo reducido */
     line-height: 1.2;      /* Menor altura de línea */
 }
 #maintenanceTable th {
