@@ -695,3 +695,21 @@ input[type="date"]:invalid {
     border-radius: 15px; /* Bordes redondeados para que coincida con el formulario */
     margin-top: 20px; /* Espacio superior */
 }
+
+/* Estilos para el Dashboard */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(44, 62, 80, 0.12);
+}
+
+.card-title {
+    font-weight: 600;
+    color: #333;
+}

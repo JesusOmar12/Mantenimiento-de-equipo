@@ -23,10 +23,43 @@ const form = document.getElementById('equipmentForm');
 const tableBody = document.querySelector('#maintenanceTable tbody');
 const dashboardStats = document.getElementById('dashboard-stats');
 
+// Actualizar el dashboard con estadísticas
+function updateDashboard(snapshot) {
+    const totalMantenimientosEl = document.getElementById('total-mantenimientos');
+    const porTipoEl = document.getElementById('mantenimientos-por-tipo');
+
+    if (!dashboardStats || !snapshot.exists()) {
+        if(totalMantenimientosEl) totalMantenimientosEl.textContent = '0';
+        if(porTipoEl) porTipoEl.innerHTML = '<p>No hay datos para mostrar.</p>';
+        return;
+    }
+
+    const data = snapshot.val();
+    const records = Object.values(data);
+
+    // 1. Total de mantenimientos
+    if (totalMantenimientosEl) {
+        totalMantenimientosEl.textContent = records.length;
+    }
+
+    // 2. Mantenimientos por tipo
+    if (porTipoEl) {
+        const counts = records.reduce((acc, record) => {
+            const tipo = record.Tipo_de_Mantenimiento || 'No especificado';
+            acc[tipo] = (acc[tipo] || 0) + 1;
+            return acc;
+        }, {});
+
+        porTipoEl.innerHTML = Object.entries(counts)
+            .map(([tipo, count]) => `<p><strong>${tipo}:</strong> ${count}</p>`)
+            .join('');
+    }
+}
 
 // Mostrar los registros de Firebase en la tabla
 function renderTableFirebase(snapshot) {
-    tableBody.innerHTML = '';
+    if (tableBody) tableBody.innerHTML = '';
+    else return; // Si no hay tabla, no hacer nada
     if (!snapshot.exists()) {
         const tr = document.createElement('tr');
         tr.innerHTML = `<td colspan="5" style="color:#888;">No hay registros de mantenimiento.</td>`;
@@ -60,62 +93,72 @@ function renderTableFirebase(snapshot) {
 }
 
 // Escuchar cambios en Firebase y actualizar la tabla en tiempo real
-onValue(ref(db, 'mantenimientos'), renderTableFirebase);
+onValue(ref(db, 'mantenimientos'), (snapshot) => {
+    // Solo renderizar la tabla si el elemento existe en la página actual
+    if (document.getElementById('maintenanceTable')) {
+        renderTableFirebase(snapshot);
+    }
+    // Solo actualizar el dashboard si el elemento existe en la página actual
+    if (document.getElementById('dashboard-stats')) {
+        updateDashboard(snapshot);
+    }
+});
 
 // Evento para registrar un nuevo mantenimiento
-form.addEventListener('submit', async function (event) {
-    event.preventDefault();
+if (form) {
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
 
-    // Obtiene los valores de los campos del formulario
-    const Nombre_del_Equipo = document.getElementById('Nombre_del_Equipo').value;
-    const Número_de_Serie = document.getElementById('Número_de_Serie').value;
-    const Fecha_de_Mantenimiento = document.getElementById('Fecha_de_Mantenimiento').value;
-    const Tipo_de_Mantenimiento = document.getElementById('Tipo_de_Mantenimiento').value;
+        // Obtiene los valores de los campos del formulario
+        const Nombre_del_Equipo = document.getElementById('Nombre_del_Equipo').value;
+        const Número_de_Serie = document.getElementById('Número_de_Serie').value;
+        const Fecha_de_Mantenimiento = document.getElementById('Fecha_de_Mantenimiento').value;
+        const Tipo_de_Mantenimiento = document.getElementById('Tipo_de_Mantenimiento').value;
 
-    // Guarda los datos en Firebase Realtime Database
-    try {
-        await push(ref(db, 'mantenimientos'), {
-            Nombre_del_Equipo,
-            Número_de_Serie,
-            Fecha_de_Mantenimiento,
-            Tipo_de_Mantenimiento
-        });
-        form.reset();
-    } catch (error) {
-        alert('Error al guardar en Firebase: ' + error.message);
-    }
-}); 
-
-    
-            // Formulario de opiniones
-            document.getElementById('opinion-form').addEventListener('submit', function (e) {
-                e.preventDefault(); // Evitar recargar la página al enviar el formulario
-    
-                const nombre = document.getElementById('nombre').value;
-                const opinion = document.getElementById('opinion').value;
-    
-                // Referencia a la base de datos en Firebase (tabla "Opiniones")
-                const opinionesRef = ref(database, 'Opiniones');
-    
-                // Guardar los datos en Firebase
-                push(opinionesRef, {
-                    nombre: nombre,
-                    opinion: opinion,
-                    fecha: new Date().toISOString() // Guardar la fecha/hora de la opinión
-                })
-                .then(() => {
-                    const mensaje = document.getElementById('mensaje');
-                    mensaje.className = 'alert alert-success'; // Agregar clase de éxito
-                    mensaje.textContent = '¡Gracias por tu opinión!';
-                    mensaje.classList.remove('d-none'); // Hacer visible el mensaje
-                    document.getElementById('opinion-form').reset();
-                })
-                .catch((error) => {
-                    const mensaje = document.getElementById('mensaje');
-                    mensaje.className = 'alert alert-danger';
-                    mensaje.textContent = 'Hubo un error al enviar tu opinión. Intenta de nuevo.';
-                    mensaje.classList.remove('d-none');
-                    console.error('Error al guardar la opinión:', error);
-                });
+        // Guarda los datos en Firebase Realtime Database
+        try {
+            await push(ref(db, 'mantenimientos'), {
+                Nombre_del_Equipo,
+                Número_de_Serie,
+                Fecha_de_Mantenimiento,
+                Tipo_de_Mantenimiento
             });
-    
+            form.reset();
+        } catch (error) {
+            alert('Error al guardar en Firebase: ' + error.message);
+        }
+    });
+}
+
+// Formulario de opiniones
+const opinionForm = document.getElementById('opinion-form');
+if (opinionForm) {
+    opinionForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Evitar recargar la página al enviar el formulario
+
+        const nombre = document.getElementById('nombre').value;
+        const opinion = document.getElementById('opinion').value;
+
+        // Referencia a la base de datos en Firebase (tabla "Opiniones")
+        const opinionesRef = ref(db, 'Opiniones');
+
+        // Guardar los datos en Firebase
+        push(opinionesRef, {
+            nombre: nombre,
+            opinion: opinion,
+            fecha: new Date().toISOString() // Guardar la fecha/hora de la opinión
+        }).then(() => {
+            const mensaje = document.getElementById('mensaje');
+            mensaje.className = 'alert alert-success'; // Agregar clase de éxito
+            mensaje.textContent = '¡Gracias por tu opinión!';
+            mensaje.classList.remove('d-none'); // Hacer visible el mensaje
+            opinionForm.reset();
+        }).catch((error) => {
+            const mensaje = document.getElementById('mensaje');
+            mensaje.className = 'alert alert-danger';
+            mensaje.textContent = 'Hubo un error al enviar tu opinión. Intenta de nuevo.';
+            mensaje.classList.remove('d-none');
+            console.error('Error al guardar la opinión:', error);
+        });
+    });
+}
