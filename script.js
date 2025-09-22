@@ -118,7 +118,7 @@ function updateDashboard(snapshot) {
 
     // Últimos 1000 registros
     if (ultimosRegistrosEl) {
-        const ultimos = records.slice(0, 10000000000000000); // Mostrar los últimos 100 registros
+        const ultimos = records.slice(0, 100); // Mostrar los últimos 100 registros
         if (ultimos.length > 0) {
             ultimosRegistrosEl.innerHTML = `
                 <ul class="list-group list-group-flush">

@@ -92,7 +92,7 @@ vertical-align : baseline; /* Alinea verticalmente los elementos a la línea de 
 margin-left : 40px; /* Margen izquierdo de 40 píxeles. */
 }
 .container { /* Estilos para un contenedor genérico. */
-width : 100px; /* Ancho de 100 píxeles. */
+width : 100%; /* Ancho de 100 píxeles. */
 overflow : hidden; /* Oculta el contenido que se desborda. */
 }
 .imagen-flotante { /* Estilos para una imagen flotante. */
@@ -262,13 +262,14 @@ display : flex; /* Se muestra como flexbox. */
 flex-direction : column; /* Apilado verticalmente. */
 align-items : flex-start; /* Alineado a la izquierda. */
 background-color: #0c169e; /* Añade un color de fondo sólido. */
-position : absolute; /* Posición absoluta. */
+position : fixed; /* Posición absoluta. */
 top : 60px; /* A 60px de la parte superior. */
-left : 0; /* A la izquierda. */
-width : 13%; /* Ocupa todo el ancho para una mejor apariencia. */
+left : -100%; /* A la izquierda. */
+width : 70%; /* Ocupa todo el ancho para una mejor apariencia. */
 height : calc(100vh - 60px); /* Altura completa de la ventana. */
 padding : 1rem; /* Relleno. */
 z-index : 10; /* Se superpone a otros elementos. */
+transition: left 0.3s ease-in-out; /* Transición suave */
 }
 .navbar { /* Redefinición de estilos para la barra de navegación. */
 background-color : #101272; /* Fondo azul. */
@@ -476,9 +477,10 @@ left : 0; /* A la izquierda. */
 width : 100%; /* Ancho completo. */
 background-color : #0f0da6; /* Fondo azul. */
 z-index : 10; /* Se superpone. */
+left: 0; /* Asegura que se muestre desde la izquierda */
 }
 .nav-links.open { /* Cuando el menú está abierto. */
-display : block; /* Se muestra como bloque. */
+display : flex; /* Se muestra como bloque. */
 }
 .navbar-toggler { /* Botón de menú hamburguesa. */
 display : inline-block; /* Se muestra. */
@@ -490,7 +492,8 @@ cursor : pointer; /* Cursor de mano. */
 margin-left : 0; /* Sin margen izquierdo. */
 }
 .nav-links.open {
-    width: 250px; /* Un ancho fijo para el menú lateral */
+    left: 0; /* Mueve el menú a la vista */
+    width: 70%; /* Un ancho adaptable para el menú lateral */
 }
 .productos .col-md-5 {
     flex: 0 0 auto; /* Evita que las columnas se estiren demasiado */
