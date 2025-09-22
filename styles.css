@@ -4,6 +4,7 @@ body { /* Estilos para el cuerpo del documento. */
     margin: 0; /* Elimina el margen exterior. */
     background-color: #ffffff;
     padding: 0; /* Elimina el relleno interior. */
+    padding-top: 60px; /* Evita que el contenido se oculte detrás de la navbar fija */
 }
 .navbar a:hover, .navbar a.active { /* Estilos para los enlaces de la barra de navegación al pasar el mouse o cuando están activos. */
 border-color : #000000b2; /* Cambia el color del borde inferior. */
@@ -261,14 +262,15 @@ display : none; /* No se muestra. */
 display : flex; /* Se muestra como flexbox. */
 flex-direction : column; /* Apilado verticalmente. */
 align-items : flex-start; /* Alineado a la izquierda. */
-background-color: #0c169e; /* Añade un color de fondo sólido. */
-position : absolute; /* Posición absoluta. */
+background-color: #101272; /* Añade un color de fondo sólido. */
+position : fixed; /* Posición fija para que no se desplace con la página. */
 top : 60px; /* A 60px de la parte superior. */
-left : 0; /* A la izquierda. */
-width : 13%; /* Ocupa todo el ancho para una mejor apariencia. */
+left : -100%; /* Oculto fuera de la pantalla por defecto. */
+width : 70%; /* Ocupa el 70% del ancho para una mejor apariencia en móviles. */
 height : calc(100vh - 60px); /* Altura completa de la ventana. */
 padding : 1rem; /* Relleno. */
-z-index : 10; /* Se superpone a otros elementos. */
+z-index : 999; /* Se superpone a otros elementos. */
+transition: left 0.3s ease-in-out; /* Transición suave para el despliegue. */
 }
 .navbar { /* Redefinición de estilos para la barra de navegación. */
 background-color : #101272; /* Fondo azul. */
@@ -277,6 +279,10 @@ padding : 1rem; /* Relleno. */
 display : flex; /* Utiliza flexbox. */
 justify-content : space-between; /* Espacio entre elementos. */
 align-items : center; /* Centrado vertical. */
+position: fixed; /* Fija la barra de navegación en la parte superior. */
+top: 0;
+width: 100%;
+z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos. */
 }
 .nav-links { /* Redefinición de los enlaces de navegación. */
 display : none; /* Oculto por defecto (para móviles). */
@@ -471,11 +477,8 @@ flex-direction : column; /* Apilado vertical. */
 .nav-links { /* Enlaces de navegación en móviles. */
 display : none; /* Oculto por defecto. */
 position : absolute; /* Posición absoluta. */
-top : 60px; /* A 60px de arriba. */
-left : 0; /* A la izquierda. */
-width : 100%; /* Ancho completo. */
-background-color : #0f0da6; /* Fondo azul. */
-z-index : 10; /* Se superpone. */
+/* Las propiedades de posicionamiento y fondo ya están definidas arriba */
+/* Se eliminan reglas redundantes */
 }
 .nav-links.open { /* Cuando el menú está abierto. */
 display : block; /* Se muestra como bloque. */
@@ -490,7 +493,8 @@ cursor : pointer; /* Cursor de mano. */
 margin-left : 0; /* Sin margen izquierdo. */
 }
 .nav-links.open {
-    width: 250px; /* Un ancho fijo para el menú lateral */
+    left: 0; /* Mueve el menú a la vista */
+    display: flex; /* Asegura que se comporte como flex container */
 }
 .productos .col-md-5 {
     flex: 0 0 auto; /* Evita que las columnas se estiren demasiado */
