@@ -261,7 +261,7 @@ display : none; /* No se muestra. */
 display : flex; /* Se muestra como flexbox. */
 flex-direction : column; /* Apilado verticalmente. */
 align-items : flex-start; /* Alineado a la izquierda. */
-background-color: #0d76a6; /* Añade un color de fondo sólido. */
+background-color: #0c169e; /* Añade un color de fondo sólido. */
 position : absolute; /* Posición absoluta. */
 top : 60px; /* A 60px de la parte superior. */
 left : 0; /* A la izquierda. */
