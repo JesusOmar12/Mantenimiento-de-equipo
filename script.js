@@ -101,7 +101,7 @@ function updateDashboard(snapshot) {
                         },
                         // Configuración del plugin datalabels
                         datalabels: {
-                            color: '#fff', // Color del texto
+                            color: '#000000', // Color del texto 
                             textAlign: 'center',
                             font: {
                                 weight: 'bold',
