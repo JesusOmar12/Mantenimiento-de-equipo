@@ -1,4 +1,4 @@
-     // Importa las funciones necesarias de Firebase
+// Importa las funciones necesarias de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
@@ -85,7 +85,7 @@ form.addEventListener('submit', async function (event) {
         alert('Error al guardar en Firebase: ' + error.message);
     }
 }); 
-   
+
     
             // Formulario de opiniones
             document.getElementById('opinion-form').addEventListener('submit', function (e) {
