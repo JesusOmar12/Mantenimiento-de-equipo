@@ -65,6 +65,9 @@ function updateDashboard(snapshot) {
                 tipoMantenimientoChart.destroy();
             }
 
+            // Registrar el plugin globalmente para todos los gráficos
+            Chart.register(ChartDataLabels);
+
             tipoMantenimientoChart = new Chart(chartCanvas, {
                 type: 'doughnut', // Tipo de gráfico: dona
                 data: {
@@ -95,6 +98,17 @@ function updateDashboard(snapshot) {
                     plugins: {
                         legend: {
                             position: 'top',
+                        },
+                        // Configuración del plugin datalabels
+                        datalabels: {
+                            color: '#fff', // Color del texto
+                            textAlign: 'center',
+                            font: {
+                                weight: 'bold',
+                                size: 16
+                            },
+                            // Formateador para mostrar el valor numérico
+                            formatter: (value) => value,
                         }
                     }
                 }
