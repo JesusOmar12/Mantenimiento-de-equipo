@@ -678,13 +678,6 @@ input[type="date"]:invalid {
     z-index: 1;
 }
 
-/* Estilo para la sección de opiniones */
-#opiniones {
-    background-color: #ffffff; /* Fondo blanco */
-    padding: 30px; /* Añade un poco de espacio interno */
-    border-radius: 15px; /* Bordes redondeados para que coincida con el formulario */
-    margin-top: 20px; /* Espacio superior */
-}
 
 /* Estilos para el Dashboard */
 .card {

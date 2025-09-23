@@ -22,9 +22,9 @@ const auth = getAuth(app);
 const form = document.getElementById('equipmentForm');
 const tableBody = document.querySelector('#maintenanceTable tbody');
 const dashboardStats = document.getElementById('dashboard-stats');
-const loginForm = document.getElementById('login-form');
-const registerForm = document.getElementById('register-form');
-const errorMessageDiv = document.getElementById('error-message');
+export const loginForm = document.getElementById('login-form');
+export const registerForm = document.getElementById('register-form');
+export const errorMessageDiv = document.getElementById('error-message');
 
 let tipoMantenimientoChart = null; // Variable para almacenar la instancia del gráfico
 
@@ -252,6 +252,14 @@ function showMessage(message, isError = true) {
     }
 }
 
+function showMessage(message, isError = true) {
+    if (errorMessageDiv) {
+        errorMessageDiv.textContent = message;
+        errorMessageDiv.className = isError ? 'alert alert-danger mt-3' : 'alert alert-success mt-3';
+        errorMessageDiv.classList.remove('d-none');
+    }
+}
+
 // Lógica de registro
 if (registerForm) {
     registerForm.addEventListener('submit', (e) => {
@@ -321,5 +329,27 @@ if (logoutButton) {
         signOut(auth).then(() => {
             window.location.href = 'login.html';
         });
+    });
+}
+
+// Lógica para mostrar/ocultar contraseña
+const togglePassword = document.getElementById('toggle-password');
+const passwordInput = document.getElementById('password');
+
+if (togglePassword && passwordInput) {
+    togglePassword.addEventListener('click', function () {
+        // Cambia el tipo de input
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        
+        // Cambia el ícono del ojo
+        const icon = this.querySelector('i');
+        if (type === 'password') {
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        } else {
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        }
     });
 }
