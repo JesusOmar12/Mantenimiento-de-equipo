@@ -1,6 +1,6 @@
 // Importa todas las funciones necesarias de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 import { getDatabase, ref, set, push, onValue, remove } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
 
 // Configuración de Firebase
@@ -25,67 +25,11 @@ const form = document.getElementById('equipmentForm');
 const tableBody = document.querySelector('#maintenanceTable tbody');
 const dashboardStats = document.getElementById('dashboard-stats');
 const opinionForm = document.getElementById('opinion-form');
-const loginForm = document.getElementById('login-form');
-const registerForm = document.getElementById('register-form');
-const errorMessageDiv = document.getElementById('error-message');
 const logoutButton = document.getElementById('logout-button');
-const togglePassword = document.getElementById('toggle-password');
-const passwordInput = document.getElementById('password');
 
 let tipoMantenimientoChart = null; // Variable para almacenar la instancia del gráfico
 
 // ---
-// Lógica de Autenticación y Protección de Rutas
-
-function showMessage(message, isError = true) {
-    if (errorMessageDiv) {
-        errorMessageDiv.textContent = message;
-        errorMessageDiv.className = isError ? 'alert alert-danger mt-3' : 'alert alert-success mt-3';
-        errorMessageDiv.classList.remove('d-none');
-    }
-}
-
-// Lógica de registro
-if (registerForm) {
-    registerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                set(ref(db, 'users/' + user.uid), {
-                    name: name,
-                    email: email
-                }).then(() => {
-                    window.location.href = 'login.html';
-                });
-            })
-            .catch((error) => {
-                showMessage(error.message);
-            });
-    });
-}
-
-// Lógica de inicio de sesión
-if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        signInWithEmailAndPassword(auth, email, password)
-            .then(() => {
-                window.location.href = 'index.html';
-            })
-            .catch(() => {
-                showMessage('Correo o contraseña incorrectos.');
-            });
-    });
-}
-
 // Lógica para proteger rutas y cerrar sesión
 const protectedPages = ['index.html', 'control_de_mantenimiento.html', 'dashboard.html', 'preventivo.html', 'correctivo.html'];
 const currentPage = window.location.pathname.split("/").pop();
@@ -109,22 +53,6 @@ if (logoutButton) {
         signOut(auth).then(() => {
             window.location.href = 'login.html';
         });
-    });
-}
-
-// Lógica para mostrar/ocultar contraseña
-if (togglePassword && passwordInput) {
-    togglePassword.addEventListener('click', function () {
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        const icon = this.querySelector('i');
-        if (type === 'password') {
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye');
-        } else {
-            icon.classList.remove('fa-eye');
-            icon.classList.add('fa-eye-slash');
-        }
     });
 }
 
