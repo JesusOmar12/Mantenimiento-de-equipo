@@ -711,5 +711,5 @@ input[type="date"]:invalid {
 
 .auth-card .form-control {
     padding: 0.75rem; /* Relleno para los campos de formulario dentro de la tarjeta. */
-    border: 1px solid #ced4da; /* Borde gris estándar para mejor visibilidad */
+    border: 1px solid #424344; /* Borde gris estándar para mejor visibilidad */
 }
