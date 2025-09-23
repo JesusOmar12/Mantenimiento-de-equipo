@@ -12,11 +12,8 @@ body { /* Estilos para el cuerpo del documento. */
     display: flex; flex-direction: column; /* Permite que el footer se pegue abajo. */
 }
 .navbar a:hover, .navbar a.active { /* Estilos para los enlaces de la barra de navegación al pasar el mouse o cuando están activos. */
-    border-color : #000000b2; /* Cambia el color del borde inferior para resaltar el enlace. */
-}
-.logo { /* Estilos para el logo. */
     color : white; /* Establece el color del texto del logo a blanco. */
-    font-size : 24px; /* Define el tamaño de la fuente del logo. */
+    font-size : 19px; /* Define el tamaño de la fuente del logo. */
     font-weight : bold; /* Pone el texto del logo en negrita. */
 }main {
     flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible. */
@@ -318,6 +315,12 @@ p { /* Estilos para los párrafos. */
     display : block; /* Convierte el enlace en un bloque para ocupar todo el espacio. */
     padding : 0.5rem; /* Relleno para aumentar el área de clic. */
 }
+.nav-links a:hover, .nav-links a.active {
+    background-color: #5a5a5e; /* Color de fondo más oscuro para el hover y el estado activo */
+    border-radius: 5px; /* Bordes redondeados para un aspecto más suave */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
 .navbar-toggler { /* Botón de menú hamburguesa. */
     background : none; /* Sin fondo. */
     border : none; /* Sin borde. */
