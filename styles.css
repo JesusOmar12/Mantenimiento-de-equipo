@@ -756,7 +756,7 @@ input[type="date"]:invalid {
 }
 
 .auth-card .form-label {
-    color: white; /* Cambia el color del texto de las etiquetas a blanco */
+    color: rgb(0, 0, 0); /* Cambia el color del texto de las etiquetas a blanco */
 }
 
 /* Fondo para bloques de texto en páginas de contenido */
