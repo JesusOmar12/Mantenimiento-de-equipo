@@ -22,7 +22,7 @@ body { /* Estilos para el cuerpo del documento. */
     flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible. */
 }
 .header { /* Estilos para la sección de la cabecera. */
-    background-color: rgba(109, 106, 106, 0.767); /* Fondo blanco semitransparente para legibilidad. */
+    background-color: rgba(71, 71, 71, 0.767); /* Fondo blanco semitransparente para legibilidad. */
     color: #333; /* Color de texto oscuro para mejor contraste. */
     text-align: center; /* Centra el texto horizontalmente. */
     padding: 20px; /* Añade un relleno de 20 píxeles alrededor del contenido. */
@@ -100,7 +100,7 @@ body { /* Estilos para el cuerpo del documento. */
 }
 
 footer { /* Estilos para el pie de página. */
-    background-color : #4b4b4e; /* Establece un color de fondo azul oscuro. */
+    background-color : #434344; /* Establece un color de fondo azul oscuro. */
     color : white; /* Establece el color del texto a blanco. */
     text-align : center; /* Centra el contenido del pie de página. */
     padding : 20px; /* Añade un relleno de 20 píxeles. */
@@ -725,6 +725,15 @@ input[type="date"]:invalid {
     border: none; /* Sin borde. */
     padding: 0; /* Sin relleno. */
     box-shadow: none; /* Sin sombra. */
+}
+
+/* Estilo para el título del Dashboard */
+.dashboard-title {
+    background-color: rgba(255, 255, 255, 0.836); /* Fondo blanco semitransparente. */
+    color: #000000; /* Color de texto negro. */
+    display: inline-block; /* Hace que el fondo se ajuste al contenido. */
+    padding: 5px 15px; /* Relleno para que el fondo no esté pegado al texto. */
+    border-radius: 5px; /* Bordes redondeados. */
 }
 
 /* Estilos para las tarjetas de login y registro */
