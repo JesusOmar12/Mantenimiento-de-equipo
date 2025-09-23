@@ -1,132 +1,15 @@
 // Importa las funciones necesarias de Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
-import { getDatabase, ref, push, onValue, remove, set } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCxRP4rNfVJRzU8YLrMu51Os9-PfY60Tqk",
-    authDomain: "mantenimiento-a-equipo.firebaseapp.com",
-    databaseURL: "https://mantenimiento-a-equipo-default-rtdb.firebaseio.com",
-    projectId: "mantenimiento-a-equipo",
-    storageBucket: "mantenimiento-a-equipo.firebasestorage.app",
-    messagingSenderId: "840988363789",
-    appId: "1:840988363789:web:47bf961f1ad221529d1944",
-    measurementId: "G-NFXY6LLJMR"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const analytics = getAnalytics(app);
-const db = getDatabase(app);
+import { ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+// Importa las instancias de auth y db desde auth.js para evitar duplicados
+import { auth, db } from "./auth.js";
 
 // Referencias a elementos de la interfaz
-const loginForm = document.getElementById('login-form');
-const registerForm = document.getElementById('register-form');
-const logoutButton = document.getElementById('logout-button');
-const errorMessageDiv = document.getElementById('error-message');
 const form = document.getElementById('equipmentForm');
 const tableBody = document.querySelector('#maintenanceTable tbody');
 const dashboardStats = document.getElementById('dashboard-stats');
 const opinionForm = document.getElementById('opinion-form');
 
 let tipoMantenimientoChart = null; // Variable para almacenar la instancia del gráfico
-
-function showMessage(message, isError = true) {
-    if (errorMessageDiv) {
-        errorMessageDiv.textContent = message;
-        errorMessageDiv.className = isError ? 'alert alert-danger mt-3' : 'alert alert-success mt-3';
-        errorMessageDiv.classList.remove('d-none');
-    }
-}
-
-// Lógica para proteger rutas y gestionar el estado de autenticación
-const protectedPages = ['index.html', 'control_de_mantenimiento.html', 'dashboard.html', 'preventivo.html', 'correctivo.html'];
-const currentPage = window.location.pathname.split("/").pop();
-
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // El usuario está autenticado
-        if (currentPage === 'login.html' || currentPage === 'register.html') {
-            window.location.href = 'index.html';
-        }
-    } else {
-        // El usuario no está autenticado
-        if (protectedPages.includes(currentPage)) {
-            window.location.href = 'login.html';
-        }
-    }
-});
-
-// Lógica de registro
-if (registerForm) {
-    registerForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
-                set(ref(db, 'users/' + user.uid), {
-                    name: name,
-                    email: email
-                }).then(() => {
-                    window.location.href = 'login.html';
-                });
-            })
-            .catch((error) => {
-                showMessage(error.message);
-            });
-    });
-}
-
-// Lógica de inicio de sesión
-if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        signInWithEmailAndPassword(auth, email, password)
-            .then(() => {
-                window.location.href = 'index.html';
-            })
-            .catch(() => {
-                showMessage('Correo o contraseña incorrectos.');
-            });
-    });
-}
-
-// Lógica para cerrar sesión
-if (logoutButton) {
-    logoutButton.addEventListener('click', () => {
-        signOut(auth).then(() => {
-            window.location.href = 'login.html';
-        });
-    });
-}
-
-// Lógica para mostrar/ocultar contraseña
-const togglePassword = document.getElementById('toggle-password');
-const passwordInput = document.getElementById('password');
-
-if (togglePassword && passwordInput) {
-    togglePassword.addEventListener('click', function () {
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-        
-        const icon = this.querySelector('i');
-        if (type === 'password') {
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye');
-        } else {
-            icon.classList.remove('fa-eye');
-            icon.classList.add('fa-eye-slash');
-        }
-    });
-}
 
 // ---
 // Actualizar el dashboard con estadísticas
