@@ -1,21 +1,19 @@
 // Importa las funciones necesarias de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCxRP4rNfVJRzU8YLrMu51Os9-PfY60Tqk",
+    apiKey: "AIzaSyCxRP4rNfVJRzU8YLrMu51Os9-PfY60Tqk", // Asegúrate que esta clave es correcta y está segura
     authDomain: "mantenimiento-a-equipo.firebaseapp.com",
     databaseURL: "https://mantenimiento-a-equipo-default-rtdb.firebaseio.com",
     projectId: "mantenimiento-a-equipo",
     storageBucket: "mantenimiento-a-equipo.firebasestorage.app",
     messagingSenderId: "840988363789",
     appId: "1:840988363789:web:47bf961f1ad221529d1944",
-    measurementId: "G-NFXY6LLJMR"
+    measurementId: "G-D9REDB493L" // Este ID parece ser el correcto según tus HTML
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
 // Referencia a la tabla y formulario
