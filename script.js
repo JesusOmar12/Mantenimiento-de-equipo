@@ -96,6 +96,9 @@ function updateDashboard(snapshot) {
 
             // Asegúrate de que Chart.js y el plugin ChartDataLabels están cargados en tu HTML
             if (window.Chart && window.ChartDataLabels) {
+                // Registra el plugin para que se aplique a todas las gráficas
+                Chart.register(ChartDataLabels);
+
                 tipoMantenimientoChart = new Chart(chartCanvas, {
                     type: 'doughnut',
                     data: {
@@ -128,7 +131,7 @@ function updateDashboard(snapshot) {
                                 position: 'top',
                             },
                             datalabels: {
-                                color: '#000000',
+                                color: '#ffffff',
                                 textAlign: 'center',
                                 font: {
                                     weight: 'bold',
