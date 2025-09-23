@@ -705,7 +705,7 @@ input[type="date"]:invalid {
 
 /* Estilos para las tarjetas de login y registro */
 .auth-card {
-    border: 1px solid #000000; /* Borde gris claro. */
+    border: 1px solid #000000; /* Borde negro. */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra muy sutil. */
 }
 
