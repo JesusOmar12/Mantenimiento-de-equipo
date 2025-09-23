@@ -1,6 +1,7 @@
 // Importa las funciones necesarias de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
+import { errorMessageDiv, registerForm, auth, db, loginForm } from "./auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCxRP4rNfVJRzU8YLrMu51Os9-PfY60Tqk", // Asegúrate que esta clave es correcta y está segura
@@ -15,11 +16,15 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const auth = getAuth(app);
 
 // Referencia a la tabla y formulario
 const form = document.getElementById('equipmentForm');
 const tableBody = document.querySelector('#maintenanceTable tbody');
 const dashboardStats = document.getElementById('dashboard-stats');
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+const errorMessageDiv = document.getElementById('error-message');
 
 let tipoMantenimientoChart = null; // Variable para almacenar la instancia del gráfico
 
@@ -235,6 +240,86 @@ if (opinionForm) {
             mensaje.textContent = 'Hubo un error al enviar tu opinión. Intenta de nuevo.';
             mensaje.classList.remove('d-none');
             console.error('Error al guardar la opinión:', error);
+        });
+    });
+}
+
+function showMessage(message, isError = true) {
+    if (errorMessageDiv) {
+        errorMessageDiv.textContent = message;
+        errorMessageDiv.className = isError ? 'alert alert-danger mt-3' : 'alert alert-success mt-3';
+        errorMessageDiv.classList.remove('d-none');
+    }
+}
+
+// Lógica de registro
+if (registerForm) {
+    registerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Usuario registrado
+                const user = userCredential.user;
+                // Guardar información adicional en Realtime Database
+                set(ref(db, 'users/' + user.uid), {
+                    name: name,
+                    email: email
+                }).then(() => {
+                    // Redirigir al login o directamente a index
+                    window.location.href = 'login.html';
+                });
+            })
+            .catch((error) => {
+                showMessage(error.message);
+            });
+    });
+}
+
+// Lógica de inicio de sesión
+if (loginForm) {
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Usuario ha iniciado sesión
+                window.location.href = 'index.html';
+            })
+            .catch((error) => {
+                showMessage('Correo o contraseña incorrectos.');
+            });
+    });
+}
+
+// Lógica para proteger rutas y cerrar sesión
+const protectedPages = ['index.html', 'control_de_mantenimiento.html', 'dashboard.html', 'preventivo.html', 'correctivo.html'];
+const currentPage = window.location.pathname.split("/").pop();
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // El usuario está autenticado
+        if (currentPage === 'login.html' || currentPage === 'register.html') {
+            window.location.href = 'index.html';
+        }
+    } else {
+        // El usuario no está autenticado
+        if (protectedPages.includes(currentPage)) {
+            window.location.href = 'login.html';
+        }
+    }
+});
+
+const logoutButton = document.getElementById('logout-button');
+if (logoutButton) {
+    logoutButton.addEventListener('click', () => {
+        signOut(auth).then(() => {
+            window.location.href = 'login.html';
         });
     });
 }
