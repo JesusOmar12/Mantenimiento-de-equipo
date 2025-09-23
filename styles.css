@@ -13,10 +13,14 @@ body { /* Estilos para el cuerpo del documento. */
 }
 .navbar a:hover, .navbar a.active { /* Estilos para los enlaces de la barra de navegación al pasar el mouse o cuando están activos. */
     color : white; /* Establece el color del texto del logo a blanco. */
-    font-size : 19px; /* Define el tamaño de la fuente del logo. */
+    font-size : 19px; /* Aumenta el tamaño para que coincida visualmente con el logo */
     font-weight : bold; /* Pone el texto del logo en negrita. */
-}main {
+}
+main {
     flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible. */
+}
+.logo-container {
+    align-items: center; /* Centra verticalmente el logo y el texto */
 }
 .header { /* Estilos para la sección de la cabecera. */
     background-color: rgba(71, 71, 71, 0.767); /* Fondo blanco semitransparente para legibilidad. */
