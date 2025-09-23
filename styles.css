@@ -77,7 +77,7 @@ body { /* Estilos para el cuerpo del documento. */
 }
 
 footer { /* Estilos para el pie de página. */
-    background-color : #101272; /* Establece un color de fondo azul oscuro. */
+    background-color : #5d5d63; /* Establece un color de fondo azul oscuro. */
     color : white; /* Establece el color del texto a blanco. */
     text-align : center; /* Centra el contenido del pie de página. */
     padding : 20px; /* Añade un relleno de 20 píxeles. */
@@ -261,7 +261,7 @@ p { /* Estilos para los párrafos. */
     display : flex; /* Muestra el menú. */
     flex-direction : column; /* Apila los enlaces verticalmente. */
     align-items : flex-start; /* Alinea los enlaces a la izquierda. */
-    background-color: #0c169e; /* Fondo azul para el menú desplegado. */
+    background-color : #77777a; /* Fondo gris oscuro. */
     position : absolute; /* Posicionamiento absoluto para superponerse. */
     top : 60px; /* Distancia desde la parte superior de la barra de navegación. */
     left : 0; /* Alineado al borde izquierdo. */
@@ -271,7 +271,7 @@ p { /* Estilos para los párrafos. */
     z-index : 10; /* Asegura que el menú esté por encima de otros contenidos. */
 }
 .navbar { /* Redefinición de estilos para la barra de navegación. */
-    background-color : #101272; /* Fondo azul oscuro. */
+    background-color : #77777a; /* Fondo azul oscuro. */
     color : white; /* Texto blanco. */
     padding : 1rem; /* Relleno. */
     display : flex; /* Habilita flexbox. */
