@@ -46,7 +46,9 @@ body { /* Estilos para el cuerpo del documento. */
 .productos h2 { /* Estilos para el título de la sección de productos. */
     font-size : 32px; /* Define el tamaño de la fuente para los subtítulos de la sección. */
     margin-bottom : 10px; /* Añade un espacio debajo del subtítulo. */
-    color: #ffffff; /* Color de texto blanco para mejorar la legibilidad sobre el fondo. */
+    background-color: rgba(255, 255, 255, 0.836); /* Fondo oscuro semitransparente para el texto. */
+    color: #000000; /* Color de texto blanco para mejorar la legibilidad sobre el fondo. */
+    display: inline-block; /* Hace que el fondo se ajuste al contenido del texto. */
 }
 .product-grid { /* Estilos para la cuadrícula de productos. */
     display : flex; /* Habilita el modelo de caja flexible (flexbox). */
@@ -82,7 +84,11 @@ body { /* Estilos para el cuerpo del documento. */
 }
 .product-item h3 { /* Estilos para los títulos de los productos. */
     font-size : 20px; /* Establece el tamaño de la fuente para los nombres de los productos. */
-    color: #ffffff; /* Color de texto blanco para mejorar la legibilidad. */
+    color: #000000; /* Color de texto blanco para mejorar la legibilidad. */
+    background-color: rgba(255, 255, 255, 0.842); /* Fondo oscuro semitransparente para el texto. */
+    padding: 5px 10px; /* Relleno para que el fondo no esté pegado al texto. */
+    border-radius: 5px; /* Bordes redondeados para el fondo. */
+    display: inline-block; /* Hace que el fondo se ajuste al contenido del texto. */
 }
 
 footer { /* Estilos para el pie de página. */
@@ -714,7 +720,8 @@ input[type="date"]:invalid {
 
 /* Estilos para las tarjetas de login y registro */
 .auth-card {
-    border: 1px solid #000000; /* Borde negro. */
+    background-color: rgb(143, 137, 137); /* Fondo blanco semitransparente, igual que el otro formulario */
+    border: 1px solid #424549; /* Borde gris oscuro, igual que el otro formulario */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra muy sutil. */
 }
 
