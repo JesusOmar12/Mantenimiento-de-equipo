@@ -299,31 +299,3 @@ if (form) {
         }
     });
 }
-
-// Formulario de opiniones
-if (opinionForm) {
-    opinionForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const nombre = document.getElementById('nombre').value;
-        const opinion = document.getElementById('opinion').value;
-        const opinionesRef = ref(db, 'Opiniones');
-
-        push(opinionesRef, {
-            nombre: nombre,
-            opinion: opinion,
-            fecha: new Date().toISOString()
-        }).then(() => {
-            const mensaje = document.getElementById('mensaje');
-            mensaje.className = 'alert alert-success';
-            mensaje.textContent = '¡Gracias por tu opinión!';
-            mensaje.classList.remove('d-none');
-            opinionForm.reset();
-        }).catch((error) => {
-            const mensaje = document.getElementById('mensaje');
-            mensaje.className = 'alert alert-danger';
-            mensaje.textContent = 'Hubo un error al enviar tu opinión. Intenta de nuevo.';
-            mensaje.classList.remove('d-none');
-            console.error('Error al guardar la opinión:', error);
-        });
-    });
-}
