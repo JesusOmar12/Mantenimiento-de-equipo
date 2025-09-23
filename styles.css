@@ -22,7 +22,7 @@ body { /* Estilos para el cuerpo del documento. */
     flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible. */
 }
 .header { /* Estilos para la sección de la cabecera. */
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente para legibilidad. */
+    background-color: rgba(109, 106, 106, 0.767); /* Fondo blanco semitransparente para legibilidad. */
     color: #333; /* Color de texto oscuro para mejor contraste. */
     text-align: center; /* Centra el texto horizontalmente. */
     padding: 20px; /* Añade un relleno de 20 píxeles alrededor del contenido. */
@@ -91,8 +91,16 @@ body { /* Estilos para el cuerpo del documento. */
     display: inline-block; /* Hace que el fondo se ajuste al contenido del texto. */
 }
 
+/* Estilo para las imágenes de producto con borde */
+.product-image {
+    border: 3px solid #ffffff; /* Borde blanco de 3px. */
+    border-radius: 10px; /* Bordes redondeados. */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad. */
+    transition: transform 0.3s ease; /* Transición suave para el efecto hover. */
+}
+
 footer { /* Estilos para el pie de página. */
-    background-color : #5d5d63; /* Establece un color de fondo azul oscuro. */
+    background-color : #4b4b4e; /* Establece un color de fondo azul oscuro. */
     color : white; /* Establece el color del texto a blanco. */
     text-align : center; /* Centra el contenido del pie de página. */
     padding : 20px; /* Añade un relleno de 20 píxeles. */
@@ -468,9 +476,10 @@ p { /* Estilos para los párrafos. */
     text-align : center; /* Texto centrado. */
 }
 .product-item img { /* Imagen del item de producto. */
-    width : 100%; /* Ocupa todo el ancho de su contenedor. */
-    height : 250px; /* Altura fija. */
-    object-fit : contain; /* La imagen se ajusta para ser completamente visible sin deformarse. */
+    width: auto; /* Ancho automático para mantener la proporción. */
+    max-width: 100%; /* La imagen no excederá el ancho de su contenedor. */
+    height: 250px; /* Altura fija. */
+    object-fit: cover; /* La imagen cubre el espacio asignado, puede recortarse. */
 }
 @media (max-width: 767px) { /* Media query para móviles (esta es redundante con la anterior). */
     .header h1 { /* Título de cabecera en móviles. */
