@@ -2,8 +2,14 @@
 body { /* Estilos para el cuerpo del documento. */
     font-family: 'Raleway', Arial, sans-serif; /* Define la familia de fuentes principal. */
     margin: 0; /* Elimina el margen exterior por defecto del navegador. */
-    background-color: #ffffff; /* Establece el color de fondo del cuerpo a blanco. */
+    background-image: url('https://res.cloudinary.com/dalxsbtuo/image/upload/v1758653443/monitor-1307227_1280_dfmjfw.jpg'); /* Imagen de fondo de alta calidad para toda la página */
+    background-size: cover; /* La imagen cubre todo el espacio disponible. */
+    background-position: center; /* Centra la imagen de fondo. */
+    background-attachment: fixed; /* Fija la imagen para que no se desplace con el contenido. */
+    background-repeat: no-repeat; /* Evita que la imagen se repita. */
     padding: 0; /* Elimina el relleno interior por defecto del navegador. */
+    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la pantalla. */
+    display: flex; flex-direction: column; /* Permite que el footer se pegue abajo. */
 }
 .navbar a:hover, .navbar a.active { /* Estilos para los enlaces de la barra de navegación al pasar el mouse o cuando están activos. */
     border-color : #000000b2; /* Cambia el color del borde inferior para resaltar el enlace. */
@@ -12,13 +18,14 @@ body { /* Estilos para el cuerpo del documento. */
     color : white; /* Establece el color del texto del logo a blanco. */
     font-size : 24px; /* Define el tamaño de la fuente del logo. */
     font-weight : bold; /* Pone el texto del logo en negrita. */
+}main {
+    flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible. */
 }
 .header { /* Estilos para la sección de la cabecera. */
-    background-color: #ffffff; /* Establece el color de fondo a blanco. */
-    background-size : cover; /* Asegura que la imagen de fondo cubra todo el contenedor. */
-    color : rgb(0, 0, 0, 0.76); /* Define el color del texto con una ligera transparencia. */
-    text-align : center; /* Centra el texto horizontalmente. */
-    padding : 20px; /* Añade un relleno de 20 píxeles alrededor del contenido. */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente para legibilidad. */
+    color: #333; /* Color de texto oscuro para mejor contraste. */
+    text-align: center; /* Centra el texto horizontalmente. */
+    padding: 20px; /* Añade un relleno de 20 píxeles alrededor del contenido. */
     overflow : hidden; /* Oculta cualquier contenido que se desborde del contenedor. */
     white-space : nowrap; /* Evita que el texto se divida en varias líneas. */
     border-right : 0.15em solid rgb(228, 241, 156); /* Crea un borde derecho para simular un cursor de máquina de escribir. */
@@ -338,7 +345,6 @@ p { /* Estilos para los párrafos. */
     overflow : hidden; /* Oculta las imágenes que se salen del contenedor. */
     text-align : center; /* Centra el texto. */
     color : white; /* Color de texto blanco. */
-    background-color: #ffffff; /* Fondo blanco para la sección del carrusel. */
 }
 .cd-headline { /* Título animado. */
     font-size : 1.8rem; /* Tamaño de fuente. */
@@ -548,6 +554,7 @@ form {
     flex-direction: column; /* Apila los campos verticalmente. */
     gap: 15px; /* Espacio entre los campos. */
     border: 1px solid #424549; /* Borde gris oscuro. */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
 }
 
 /* Etiquetas del formulario */
