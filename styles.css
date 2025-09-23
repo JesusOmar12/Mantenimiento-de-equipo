@@ -40,12 +40,13 @@ body { /* Estilos para el cuerpo del documento. */
 }
 .productos { /* Estilos para la sección de productos. */
     padding : 10px 0px; /* Añade relleno vertical a la sección. */
-    background-color: #ffffff; /* Establece el color de fondo a blanco. */
+    background-color: transparent; /* Fondo transparente para integrarse con el fondo de la página. */
     text-align : center; /* Centra el contenido de la sección. */
 }
 .productos h2 { /* Estilos para el título de la sección de productos. */
     font-size : 32px; /* Define el tamaño de la fuente para los subtítulos de la sección. */
     margin-bottom : 10px; /* Añade un espacio debajo del subtítulo. */
+    color: #ffffff; /* Color de texto blanco para mejorar la legibilidad sobre el fondo. */
 }
 .product-grid { /* Estilos para la cuadrícula de productos. */
     display : flex; /* Habilita el modelo de caja flexible (flexbox). */
@@ -81,6 +82,7 @@ body { /* Estilos para el cuerpo del documento. */
 }
 .product-item h3 { /* Estilos para los títulos de los productos. */
     font-size : 20px; /* Establece el tamaño de la fuente para los nombres de los productos. */
+    color: #ffffff; /* Color de texto blanco para mejorar la legibilidad. */
 }
 
 footer { /* Estilos para el pie de página. */
