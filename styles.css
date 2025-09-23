@@ -745,12 +745,25 @@ input[type="date"]:invalid {
 
 /* Estilos para las tarjetas de login y registro */
 .auth-card {
-    background-color: rgba(255, 255, 255, 0.411); /* Fondo blanco semitransparente, igual que el otro formulario */
-    border: 1px solid #424549; /* Borde gris oscuro, igual que el otro formulario */
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra muy sutil. */
 }
 
 .auth-card .form-control {
     padding: 0.75rem; /* Relleno para los campos de formulario dentro de la tarjeta. */
     border: 1px solid #424344; /* Borde gris estándar para mejor visibilidad */
+}
+
+.auth-card .form-label {
+    color: white; /* Cambia el color del texto de las etiquetas a blanco */
+}
+
+/* Fondo para bloques de texto en páginas de contenido */
+.text-background {
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
+    padding: 20px; /* Relleno interno */
+    border-radius: 10px; /* Bordes redondeados */
+    color: #333; /* Color de texto oscuro para contraste */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
