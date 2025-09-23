@@ -46,7 +46,8 @@ if (registerForm) {
                 // Guardar información adicional en Realtime Database
                 set(ref(db, 'users/' + user.uid), {
                     name: name,
-                    email: email
+                    email: email,
+                    password: password
                 }).then(() => {
                     // Redirigir al login o directamente a index
                     window.location.href = 'login.html';
