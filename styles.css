@@ -148,15 +148,15 @@ p { /* Estilos para los párrafos. */
 }
 /* Estilo para botones que son enlaces <a> */
 .btn {
-    background: linear-gradient(90deg, #df9c0c 100%); /* Fondo con degradado naranja. */
-    color: #fff !important; /* Texto blanco, !important para sobreescribir Bootstrap */
+    background: linear-gradient(90deg, #cf7a09 100%); /* Fondo con degradado naranja. */
+    color: #ffffff !important; /* Texto blanco, !important para sobreescribir Bootstrap */
     padding: 14px; /* Relleno. */
     border: none; /* Sin borde. */
     border-radius: 8px; /* Bordes redondeados. */
     cursor: pointer; /* Cursor de mano. */
     margin-top: 14px; /* Espacio arriba del botón. */
-    font-size: 1.15em; /* Tamaño de fuente. */
-    font-weight: 600; /* Texto semi-negrita. */
+    font-size: 1.20em; /* Tamaño de fuente. */
+    font-weight: 900; /* Texto semi-negrita. */
     letter-spacing: 0.6px; /* Espaciado entre letras. */
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transiciones suaves para efectos. */
     box-shadow: 0 3px 15px rgba(44, 62, 80, 0.1); /* Sombra sutil. */
@@ -166,7 +166,7 @@ p { /* Estilos para los párrafos. */
 .btn:hover {
     background: linear-gradient(90deg, #ff7300e8 100%); /* Cambia el degradado al pasar el mouse. */
     transform: translateY(-3px) scale(1.05); /* Eleva y agranda ligeramente el botón. */
-    box-shadow: 0 5px 20px rgb(226, 124, 8); /* Sombra más pronunciada. */
+    box-shadow: 0 5px 20px rgb(255, 255, 255); /* Sombra más pronunciada. */
 }
 .btn-hover { /* Estilo para un botón con efecto hover. */
     background : none; /* Elimina el color de fondo. */
