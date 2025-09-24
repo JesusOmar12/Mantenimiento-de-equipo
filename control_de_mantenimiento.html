@@ -52,51 +52,53 @@
         };
     </script>
 
-<!-- Formulario para registrar el mantenimiento de equipos -->
-<form id="equipmentForm">
-    <input type="text" id="Nombre_de_Tecnico" placeholder="Nombre de Técnico" required> <!-- Campo para el nombre del técnico -->
-    <!-- Cambia el input por un select con opciones para el nombre del equipo -->
-    <label for="Nombre_del_Equipo">Nombre del Equipo</label>
-    <select id="Nombre_del_Equipo" required>
-        <option value="" disabled selected>Seleccione el equipo</option>
-        <option value="Laptop">Laptop</option>
-        <option value="Impresora">Impresora</option>
-        <option value="Computadora">Computadora</option>
-        <option value="Teclado">Teclado</option>
-        <option value="Probador de fibra óptica OTDR">Probador de fibra óptica OTDR</option>
-        <option value="Arista">Arista</option>
-    </select>
-    <input type="text" id="Número_de_Serie" placeholder="Número de Serie" required> <!-- Campo para el número de serie -->
-    <input type="date" id="Fecha_de_Mantenimiento" placeholder="Fecha de Mantenimiento" required> <!-- Campo para la fecha de mantenimiento -->
-    <!-- Cambia el input de tipo de mantenimiento por un select con opciones -->
-    <label for="Tipo_de_Mantenimiento">Tipo de Mantenimiento</label>
-    <select id="Tipo_de_Mantenimiento" required>
-        <option value="" disabled selected>Seleccione el tipo de mantenimiento</option>
-        <option value="Preventivo">Preventivo</option>
-        <option value="Correctivo">Correctivo</option>
-        <option value="Predictivo y Correctivo">Predictivo y Correctivo</option>
-    </select>
-    <button type="submit" class="btn btn-primary w-100">Registrar Mantenimiento</button> <!-- Botón para enviar el formulario -->
-</form>
-
-<!-- Tabla para mostrar el historial de mantenimiento registrado -->
-<div class="table-responsive">
-    <table id="maintenanceTable">
-        <thead>
-            <tr>
-                <th>Nombre de Técnico</th>
-                <th>Nombre del Equipo</th>
-                <th>N° de Serie</th>
-                <th>Fecha de Mantenimiento</th>
-                <th>Tipo de Mantenimiento</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Las filas de la tabla se agregarán aquí dinámicamente -->
-        </tbody>
-    </table>
-</div>
+    <main class="container mt-4">
+        <!-- Formulario para registrar el mantenimiento de equipos -->
+        <form id="equipmentForm">
+            <input type="text" id="Nombre_de_Tecnico" placeholder="Nombre de Técnico" required> <!-- Campo para el nombre del técnico -->
+            <!-- Cambia el input por un select con opciones para el nombre del equipo -->
+            <label for="Nombre_del_Equipo">Nombre del Equipo</label>
+            <select id="Nombre_del_Equipo" required>
+                <option value="" disabled selected>Seleccione el equipo</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Impresora">Impresora</option>
+                <option value="Computadora">Computadora</option>
+                <option value="Teclado">Teclado</option>
+                <option value="Probador de fibra óptica OTDR">Probador de fibra óptica OTDR</option>
+                <option value="Arista">Arista</option>
+            </select>
+            <input type="text" id="Número_de_Serie" placeholder="Número de Serie" required> <!-- Campo para el número de serie -->
+            <input type="date" id="Fecha_de_Mantenimiento" placeholder="Fecha de Mantenimiento" required> <!-- Campo para la fecha de mantenimiento -->
+            <!-- Cambia el input de tipo de mantenimiento por un select con opciones -->
+            <label for="Tipo_de_Mantenimiento">Tipo de Mantenimiento</label>
+            <select id="Tipo_de_Mantenimiento" required>
+                <option value="" disabled selected>Seleccione el tipo de mantenimiento</option>
+                <option value="Preventivo">Preventivo</option>
+                <option value="Correctivo">Correctivo</option>
+                <option value="Predictivo y Correctivo">Predictivo y Correctivo</option>
+            </select>
+            <button type="submit" class="w-100">Registrar Mantenimiento</button> <!-- Botón para enviar el formulario -->
+        </form>
+    
+        <!-- Tabla para mostrar el historial de mantenimiento registrado -->
+        <div class="table-responsive mt-5">
+            <table id="maintenanceTable" class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre de Técnico</th>
+                        <th>Nombre del Equipo</th>
+                        <th>N° de Serie</th>
+                        <th>Fecha de Mantenimiento</th>
+                        <th>Tipo de Mantenimiento</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Las filas de la tabla se agregarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
 
 
     <!-- Pie de página -->
@@ -108,3 +110,5 @@
     <script type="module" src="auth.js"></script>
 </body>
 </html>
+
+
