@@ -54,6 +54,7 @@
 
 <!-- Formulario para registrar el mantenimiento de equipos -->
 <form id="equipmentForm">
+    <input type="text" id="Nombre_de_Tecnico" placeholder="Nombre de Técnico" required> <!-- Campo para el nombre del técnico -->
     <!-- Cambia el input por un select con opciones para el nombre del equipo -->
     <label for="Nombre_del_Equipo">Nombre del Equipo</label>
     <select id="Nombre_del_Equipo" required>
@@ -83,6 +84,7 @@
     <table id="maintenanceTable">
         <thead>
             <tr>
+                <th>Nombre de Técnico</th>
                 <th>Nombre del Equipo</th>
                 <th>N° de Serie</th>
                 <th>Fecha de Mantenimiento</th>

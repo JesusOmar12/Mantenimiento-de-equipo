@@ -179,6 +179,7 @@ function renderTableFirebase(snapshot) {
         const reg = data[key];
         const tr = document.createElement('tr');
         tr.innerHTML = `
+            <td>${reg.Nombre_de_Tecnico}</td>
             <td>${reg.Nombre_del_Equipo}</td>
             <td>${reg.Número_de_Serie}</td>
             <td>${reg.Fecha_de_Mantenimiento}</td>
@@ -212,6 +213,7 @@ onValue(ref(db, 'mantenimientos'), (snapshot) => {
 if (form) {
     form.addEventListener('submit', async function (event) {
         event.preventDefault();
+        const Nombre_de_Tecnico = document.getElementById('Nombre_de_Tecnico').value;
         const Nombre_del_Equipo = document.getElementById('Nombre_del_Equipo').value;
         const Número_de_Serie = document.getElementById('Número_de_Serie').value;
         const Fecha_de_Mantenimiento = document.getElementById('Fecha_de_Mantenimiento').value;
@@ -219,6 +221,7 @@ if (form) {
 
         try {
             await push(ref(db, 'mantenimientos'), {
+                Nombre_de_Tecnico,
                 Nombre_del_Equipo,
                 Número_de_Serie,
                 Fecha_de_Mantenimiento,
