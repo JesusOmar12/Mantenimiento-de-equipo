@@ -1,247 +1,239 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /* Importa la fuente Raleway desde Google Fonts. */
-body { /* Estilos para el cuerpo del documento. */
-    font-family: 'Raleway', Arial, sans-serif; /* Define la familia de fuentes principal. */
-    margin: 0; /* Elimina el margen exterior por defecto del navegador. */
-    background-image: url('https://res.cloudinary.com/dalxsbtuo/image/upload/v1758653443/monitor-1307227_1280_dfmjfw.jpg'); /* Imagen de fondo de alta calidad para toda la página */
-    background-size: cover; /* La imagen cubre todo el espacio disponible. */
-    background-position: center; /* Centra la imagen de fondo. */
-    background-attachment: fixed; /* Fija la imagen para que no se desplace con el contenido. */
-    background-repeat: no-repeat; /* Evita que la imagen se repita. */
-    padding: 0; /* Elimina el relleno interior por defecto del navegador. */
-    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la pantalla. */
-    display: flex; flex-direction: column; /* Permite que el footer se pegue abajo. */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /* Importa la fuente 'Raleway' desde Google Fonts para usarla en la página. */
+body { /* Estilos generales para el elemento <body>, que contiene toda la página. */
+    font-family: 'Raleway', Arial, sans-serif; /* Define la fuente principal como 'Raleway' y fuentes de respaldo. */
+    margin: 0; /* Elimina el margen exterior por defecto que aplican los navegadores. */
+    background-image: url('https://res.cloudinary.com/dalxsbtuo/image/upload/v1758653443/monitor-1307227_1280_dfmjfw.jpg'); /* Establece una imagen de fondo para toda la página. */
+    background-size: cover; /* Asegura que la imagen de fondo cubra todo el espacio disponible, recortándose si es necesario. */
+    background-position: center; /* Centra la imagen de fondo horizontal y verticalmente. */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace al hacer scroll. */
+    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+    padding: 0; /* Elimina el relleno interior por defecto. */
+    min-height: 100vh; /* Asegura que el body ocupe al menos el 100% de la altura de la ventana. */
+    display: flex; flex-direction: column; /* Usa flexbox para organizar el contenido en una columna, permitiendo un "sticky footer". */
 }
-.navbar a:hover, .navbar a.active { /* Estilos para los enlaces de la barra de navegación al pasar el mouse o cuando están activos. */
-    color : white; /* Establece el color del texto del logo a blanco. */
-    font-size : 19px; /* Aumenta el tamaño para que coincida visualmente con el logo */
-    font-weight : bold; /* Pone el texto del logo en negrita. */
+.navbar a:hover, .navbar a.active { /* Estilos para los enlaces de la barra de navegación cuando el cursor está encima o cuando el enlace está activo. */
+    color : white; /* Cambia el color del texto a blanco. */
+    font-size : 19px; /* Aumenta el tamaño de la fuente. */
+    font-weight : bold; /* Pone el texto en negrita. */
 }
-main {
-    flex-grow: 1; /* Hace que el contenido principal ocupe el espacio disponible. */
+main { /* Estilos para el contenido principal de la página. */
+    flex-grow: 1; /* Hace que el 'main' ocupe todo el espacio vertical disponible, empujando el footer hacia abajo. */
 }
-.logo-container {
-    align-items: center; /* Centra verticalmente el logo y el texto */
+.logo-container { /* Contenedor para el logo en la barra de navegación. */
+    align-items: center; /* Centra verticalmente los elementos dentro del contenedor (logo y texto). */
 }
-.header { /* Estilos para la sección de la cabecera. */
-    background-color: rgb(46, 46, 46); /* Fondo blanco semitransparente para legibilidad. */
-    color: #333; /* Color de texto oscuro para mejor contraste. */
+.header { /* Estilos para una sección de cabecera (clase no utilizada actualmente en el HTML). */
+    background-color: rgb(46, 46, 46); /* Fondo gris oscuro. */
+    color: #333; /* Color de texto oscuro (puede que no contraste bien con el fondo). */
     text-align: center; /* Centra el texto horizontalmente. */
-    padding: 20px; /* Añade un relleno de 20 píxeles alrededor del contenido. */
-    overflow : hidden; /* Oculta cualquier contenido que se desborde del contenedor. */
+    padding: 20px; /* Añade un relleno de 20 píxeles. */
+    overflow : hidden; /* Oculta cualquier contenido que se desborde. */
     white-space : nowrap; /* Evita que el texto se divida en varias líneas. */
-    border-right : 0.15em solid rgb(228, 241, 156); /* Crea un borde derecho para simular un cursor de máquina de escribir. */
-    animation : typing 5s steps(40,end), blink-caret 0.75s step-end infinite; /* Aplica dos animaciones: una para el efecto de escritura y otra para el parpadeo del cursor. */
+    border-right : 0.15em solid rgb(228, 241, 156); /* Crea un borde para simular un cursor de máquina de escribir. */
+    animation : typing 5s steps(40,end), blink-caret 0.75s step-end infinite; /* Aplica animaciones de escritura y parpadeo del cursor. */
 }
-.header h1 { /* Estilos para el título principal en la cabecera. */
-    font-size : 48px; /* Establece el tamaño de la fuente del título principal. */
+.header h1 { /* Estilos para el título H1 dentro de la cabecera. */
+    font-size : 48px; /* Establece un tamaño de fuente grande. */
     margin-bottom : 10px; /* Añade un espacio debajo del título. */
 }
-.header p { /* Estilos para el párrafo en la cabecera. */
+.header p { /* Estilos para el párrafo dentro de la cabecera. */
     font-size : 24px; /* Establece el tamaño de la fuente del párrafo. */
 }
-.productos { /* Estilos para la sección de productos. */
-    padding : 10px 0px; /* Añade relleno vertical a la sección. */
-    background-color: transparent; /* Fondo transparente para integrarse con el fondo de la página. */
+.productos { /* Estilos para la sección que muestra los tipos de mantenimiento y ciberseguridad. */
+    padding : 10px 0px; /* Añade relleno vertical. */
+    background-color: transparent; /* Fondo transparente para que se vea la imagen del body. */
     text-align : center; /* Centra el contenido de la sección. */
 }
-.productos h2 { /* Estilos para el título de la sección de productos. */
-    font-size : 32px; /* Define el tamaño de la fuente para los subtítulos de la sección. */
-    margin-bottom : 10px; /* Añade un espacio debajo del subtítulo. */
-    background-color: rgba(255, 255, 255, 0.836); /* Fondo oscuro semitransparente para el texto. */
-    color: #000000; /* Color de texto blanco para mejorar la legibilidad sobre el fondo. */
-    display: inline-block; /* Hace que el fondo se ajuste al contenido del texto. */
+.productos h2 { /* Estilos para los títulos (h2) dentro de la sección 'productos'. */
+    font-size : 32px; /* Define el tamaño de la fuente. */
+    margin-bottom : 10px; /* Añade un espacio debajo del título. */
+    background-color: rgba(255, 255, 255, 0.836); /* Fondo blanco semitransparente para mejorar la legibilidad. */
+    color: #000000; /* Color de texto negro. */
+    display: inline-block; /* Hace que el fondo se ajuste solo al ancho del texto. */
 }
-.product-grid { /* Estilos para la cuadrícula de productos. */
-    display : flex; /* Habilita el modelo de caja flexible (flexbox). */
-    justify-content : center; /* Centra los productos horizontalmente en la cuadrícula. */
+.product-grid { /* Estilos para una cuadrícula de productos (clase no utilizada actualmente). */
+    display : flex; /* Habilita flexbox. */
+    justify-content : center; /* Centra los productos horizontalmente. */
     gap : 30px; /* Crea un espacio de 30 píxeles entre cada producto. */
 }
-.product-item { /* Estilos para cada elemento de producto. */
-    border : #ffffff solid 0px; /* Define un borde (actualmente invisible con 0px). */
-    padding : 0 0px 0px; /* Define el relleno (actualmente sin relleno). */
-    width : 0px; /* Define el ancho (actualmente 0px, probablemente sobreescrito más adelante). */
-    text-align : center; /* Centra el texto dentro del item de producto. */
+.product-item { /* Estilos para cada elemento de producto (sobrescrito más abajo). */
+    border : #ffffff solid 0px; /* Borde blanco invisible. */
+    padding : 0 0px 0px; /* Sin relleno. */
+    width : 0px; /* Ancho cero (probablemente un error o estilo base). */
+    text-align : center; /* Centra el texto. */
 }
-.product-item img { /* Estilos para las imágenes de los productos. */
-    width : 0%; /* Define el ancho de la imagen (actualmente 0%). */
-    height : 0px; /* Define la altura de la imagen (actualmente 0px). */
-    object-fit : cover; /* Asegura que la imagen cubra el espacio asignado sin deformarse. */
+.product-item img { /* Estilos para las imágenes de los productos (sobrescrito más abajo). */
+    width : 0%; /* Ancho cero. */
+    height : 0px; /* Altura cero. */
+    object-fit : cover; /* La imagen cubre el espacio asignado. */
 }
-@keyframes typing { /* Define la animación de escritura. */
-    from { /* Estado inicial de la animación. */
-        width : 0; /* El ancho del elemento es 0 al inicio. */
-    }
-    to { /* Estado final de la animación. */
-        width : 100%; /* El ancho del elemento es 100% al final. */
-    }
+@keyframes typing { /* Define la animación de "escritura a máquina". */
+    from { width : 0; } /* La animación comienza con un ancho de 0. */
+    to { width : 100%; } /* La animación termina con un ancho del 100%. */
 }
-@keyframes blink-caret { /* Define la animación de parpadeo del cursor. */
-    from, to { /* Estados inicial y final de la animación. */
-        border-color : transparent; /* El color del borde es transparente, haciendo invisible el cursor. */
-    }
-    50% { /* A la mitad de la animación. */
-        border-color : rgb(228, 241, 156); /* El color del borde cambia para simular el parpadeo del cursor. */
-    }
+@keyframes blink-caret { /* Define la animación de parpadeo del "cursor". */
+    from, to { border-color : transparent; } /* Al inicio y al final, el borde es transparente (invisible). */
+    50% { border-color : rgb(228, 241, 156); } /* A la mitad de la animación, el borde es visible. */
 }
-.product-item h3 { /* Estilos para los títulos de los productos. */
-    font-size : 20px; /* Establece el tamaño de la fuente para los nombres de los productos. */
-    color: #000000; /* Color de texto blanco para mejorar la legibilidad. */
-    background-color: rgba(255, 255, 255, 0.842); /* Fondo oscuro semitransparente para el texto. */
+.product-item h3 { /* Estilos para los títulos (h3) de los productos. */
+    font-size : 20px; /* Establece el tamaño de la fuente. */
+    color: #000000; /* Color de texto negro. */
+    background-color: rgba(255, 255, 255, 0.842); /* Fondo blanco semitransparente. */
     padding: 5px 10px; /* Relleno para que el fondo no esté pegado al texto. */
     border-radius: 5px; /* Bordes redondeados para el fondo. */
     display: inline-block; /* Hace que el fondo se ajuste al contenido del texto. */
 }
 
-/* Estilo para las imágenes de producto con borde */
+/* Estilo para las imágenes de producto con borde y sombra. */
 .product-image {
     border: 3px solid #ffffff; /* Borde blanco de 3px. */
-    border-radius: 10px; /* Bordes redondeados. */
+    border-radius: 10px; /* Bordes redondeados de 10px. */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad. */
-    transition: transform 0.3s ease; /* Transición suave para el efecto hover. */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de transformación al pasar el mouse. */
 }
 
 footer { /* Estilos para el pie de página. */
-    background-color : #504f4f; /* Establece un color de fondo azul oscuro. */
+    background-color : #504f4f; /* Establece un color de fondo gris oscuro. */
     color : white; /* Establece el color del texto a blanco. */
     text-align : center; /* Centra el contenido del pie de página. */
     padding : 20px; /* Añade un relleno de 20 píxeles. */
 }
 
-* { /* Selector universal que se aplica a todos los elementos. */
+* { /* Selector universal: se aplica a TODOS los elementos de la página. */
     margin : 0; /* Elimina todos los márgenes por defecto. */
     padding : 0; /* Elimina todos los rellenos por defecto. */
     vertical-align : baseline; /* Alinea verticalmente los elementos a su línea de base. */
 }
-.logo { /* Estilos adicionales para el logo. */
+.logo { /* Estilos para el logo. */
     margin-left : 40px; /* Añade un margen a la izquierda del logo. */
 }
-.container { /* Estilos para un contenedor genérico. */
-    width : 100px; /* Define un ancho fijo (probablemente sobreescrito más adelante). */
+.container { /* Estilos para un contenedor genérico (sobrescrito más abajo). */
+    width : 100px; /* Ancho fijo (probablemente un estilo base). */
     overflow : hidden; /* Oculta el contenido que se desborde. */
 }
-.imagen-flotante { /* Estilos para una imagen flotante. */
-    float : left; /* Hace que la imagen flote a la izquierda del texto. */
+.imagen-flotante { /* Estilos para una imagen flotante (clase no utilizada). */
+    float : left; /* Hace que la imagen flote a la izquierda. */
     margin-right : 10px; /* Añade un espacio a la derecha de la imagen. */
 }
-.title { /* Estilos para un título genérico. */
+.title { /* Estilos para un título genérico (clase no utilizada). */
     margin-bottom : 40px; /* Añade un espacio debajo del título. */
     font-size : 30px; /* Define el tamaño de la fuente. */
     font-weight : 600; /* Establece un grosor de fuente semi-negrita. */
     text-transform : uppercase; /* Convierte el texto a mayúsculas. */
 }
-p { /* Estilos para los párrafos. */
+p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). */
     margin-bottom : 50px; /* Añade un espacio debajo de los párrafos. */
-    font-size : 15px; /* Define el tamaño de la fuente para los párrafos. */
+    font-size : 15px; /* Define el tamaño de la fuente. */
 }    
-.btn { /* Estilos para un botón genérico. */
+.btn { /* Estilos para un botón genérico (sobrescrito más abajo). */
     display : inline-block; /* Permite que el botón tenga ancho, alto, padding y margen. */
     margin-top : 20px; /* Añade un espacio arriba del botón. */
-    padding : 10px 40px; /* Añade relleno vertical y horizontal. */
-    border : #000000 solid 2px; /* Crea un borde negro sólido. */
-    border-radius : 4px; /* Redondea las esquinas del botón. */
-    color : #fff; /* Establece el color del texto a blanco. */
-    text-decoration : none; /* Elimina el subrayado de los enlaces. */
-    background : #000000; /* Establece el color de fondo a negro. */
+    padding : 10px 40px; /* Añade relleno. */
+    border : #000000 solid 2px; /* Borde negro sólido. */
+    border-radius : 4px; /* Redondea las esquinas. */
+    color : #fff; /* Texto blanco. */
+    text-decoration : none; /* Elimina el subrayado. */
+    background : #000000; /* Fondo negro. */
 }
-.btn-hover { /* Estilo para un botón con efecto hover. */
+.btn-hover { /* Estilo para un botón con efecto hover (clase no utilizada). */
     background : none; /* Elimina el color de fondo. */
 }
-/* Estilo para botones que son enlaces <a> */
+/* Estilo principal para botones que son enlaces <a>. */
 .btn {
     background: linear-gradient(90deg, #cf7a09 100%); /* Fondo con degradado naranja. */
-    color: #ffffff !important; /* Texto blanco, !important para sobreescribir Bootstrap */
+    color: #ffffff !important; /* Texto blanco, !important para sobreescribir otros estilos (ej. Bootstrap). */
     padding: 14px; /* Relleno. */
     border: none; /* Sin borde. */
     border-radius: 8px; /* Bordes redondeados. */
-    cursor: pointer; /* Cursor de mano. */
+    cursor: pointer; /* Muestra un cursor de mano. */
     margin-top: 14px; /* Espacio arriba del botón. */
     font-size: 1.20em; /* Tamaño de fuente. */
-    font-weight: 900; /* Texto semi-negrita. */
+    font-weight: 900; /* Texto muy negrita. */
     letter-spacing: 0.6px; /* Espaciado entre letras. */
     transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transiciones suaves para efectos. */
     box-shadow: 0 3px 15px rgba(44, 62, 80, 0.1); /* Sombra sutil. */
-    text-decoration: none; /* Quita el subrayado */
+    text-decoration: none; /* Quita el subrayado. */
 }
 
-.btn:hover {
-    background: linear-gradient(90deg, #ff7300e8 100%); /* Cambia el degradado al pasar el mouse. */
+.btn:hover { /* Estilo para el botón al pasar el cursor por encima. */
+    background: linear-gradient(90deg, #ff7300e8 100%); /* Cambia el degradado a un naranja más brillante. */
     transform: translateY(-3px) scale(1.05); /* Eleva y agranda ligeramente el botón. */
-    box-shadow: 0 5px 20px rgb(255, 255, 255); /* Sombra más pronunciada. */
+    box-shadow: 0 5px 20px rgb(255, 255, 255); /* Sombra blanca más pronunciada. */
 }
-.btn-hover { /* Estilo para un botón con efecto hover. */
+.btn-hover { /* Estilo redundante para un botón con efecto hover. */
     background : none; /* Elimina el color de fondo. */
 }
-.btn-home { /* Estilos para un contenedor de botones de inicio. */
-    display : flex; /* Habilita flexbox para alinear los botones. */
+.btn-home { /* Contenedor para botones de inicio (clase no utilizada). */
+    display : flex; /* Habilita flexbox. */
 }
-.btn-home a { /* Estilos para los enlaces dentro del contenedor de botones de inicio. */
+.btn-home a { /* Enlaces dentro del contenedor de botones de inicio. */
     margin : 0 15px; /* Añade margen horizontal entre los botones. */
 }
-.content { /* Estilos para un contenedor de contenido principal. */
-    height : 60vh; /* Establece la altura al 60% de la altura de la ventana. */
+.content { /* Contenedor de contenido principal (clase no utilizada). */
+    height : 60vh; /* Altura del 60% de la ventana. */
     display : flex; /* Habilita flexbox. */
-    flex-direction : column; /* Apila los elementos hijos verticalmente. */
+    flex-direction : column; /* Apila los elementos verticalmente. */
     justify-content : center; /* Centra el contenido verticalmente. */
     align-items : center; /* Centra el contenido horizontalmente. */
 }
-.Formulario {
+.Formulario { /* Estilos para un contenedor de formulario (sobrescrito por 'form'). */
     width : 440px; /* Ancho del formulario. */
     height : auto; /* Altura automática. */
     overflow : hidden; /* Oculta el desbordamiento. */
     border : #ccc solid 1px; /* Borde gris claro. */
     padding : 5px; /* Relleno. */
     float : left; /* Flota a la izquierda. */
-} /* Estilos para un contenedor de formulario. */
+} 
 
-.Contenedor { /* Estilos para un contenedor principal que alinea formulario */
+.Contenedor { /* Contenedor principal que alinea formulario (clase no utilizada). */
     display : flex; /* Habilita flexbox. */
     justify-content : center; /* Centra los elementos horizontalmente. */
-    align-items : flex-start; /* Alinea los elementos en la parte superior del contenedor. */
+    align-items : flex-start; /* Alinea los elementos en la parte superior. */
 }
-.Formulario { /* Estilos comunes para el formulario. */
-    margin : 20px; /* Añade un margen de 20 píxeles alrededor del formulario. */
+.Formulario { /* Estilos comunes para el formulario (redundante). */
+    margin : 20px; /* Margen de 20 píxeles. */
 }
-.Formulario input[type="text"], .Formulario textarea { /* Estilos para los campos de texto y área de texto en el formulario. */
-    width : 100%; /* Ocupa todo el ancho disponible. */
-    padding : 9px; /* Añade relleno interno. */
-    margin-bottom : 10px; /* Añade espacio debajo de cada campo. */
-    box-sizing : border-box; /* Asegura que el padding y el borde no aumenten el ancho total. */
-    border : #000000 solid 2px; /* Define un borde negro sólido. */
+.Formulario input[type="text"], .Formulario textarea { /* Estilos para campos de texto (sobrescrito por estilos más específicos). */
+    width : 100%; /* Ocupa todo el ancho. */
+    padding : 9px; /* Relleno interno. */
+    margin-bottom : 10px; /* Espacio debajo de cada campo. */
+    box-sizing : border-box; /* El padding y borde no aumentan el ancho total. */
+    border : #000000 solid 2px; /* Borde negro sólido. */
 }
-.Formulario input[type="submit"] { /* Estilos para el botón de envío del formulario. */
+.Formulario input[type="submit"] { /* Estilos para el botón de envío (sobrescrito por 'button'). */
     background-color : #000000; /* Fondo negro. */
     color : white; /* Texto blanco. */
-    padding : 10px 20px; /* Relleno vertical y horizontal. */
-    border : 14px; /* Define un borde de 14px (esto puede ser un error, podría ser 'border: none;'). */
+    padding : 10px 20px; /* Relleno. */
+    border : 14px; /* Borde de 14px (probablemente un error, debería ser 'border: none;'). */
     border-radius : 4px; /* Redondea las esquinas. */
-    cursor : pointer; /* Cambia el cursor a una mano al pasar sobre el botón. */
+    cursor : pointer; /* Cursor de mano. */
 }
-.ContenedorImagenes img { /* Estilos para imágenes dentro de un contenedor de imágenes. */
-    width : 200px; /* Ancho fijo para las imágenes. */   
-    margin : 0 20px; /* Margen horizontal entre imágenes. */    
+.ContenedorImagenes img { /* Imágenes dentro de un contenedor (clase no utilizada). */
+    width : 200px; /* Ancho fijo. */   
+    margin : 0 20px; /* Margen horizontal. */    
 }
-.ContenedorImagenes { /* Estilos para el contenedor de imágenes. */
+.ContenedorImagenes { /* Contenedor de imágenes (clase no utilizada). */
     display : flex; /* Habilita flexbox. */
-    justify-content : space-between; /* Distribuye el espacio uniformemente entre las imágenes. */
+    justify-content : space-between; /* Distribuye el espacio entre las imágenes. */
     align-items : center; /* Centra las imágenes verticalmente. */
-    margin-bottom : 10px; /* Añade espacio debajo del contenedor. */
-    text-align : center; /* Centra el texto (si lo hubiera). */
+    margin-bottom : 10px; /* Espacio debajo del contenedor. */
+    text-align : center; /* Centra el texto. */
 }
-.carousel-inner img { /* Estilos para las imágenes dentro de un carrusel de Bootstrap. */
+.carousel-inner img { /* Imágenes dentro de un carrusel de Bootstrap. */
     max-width : 100%; /* La imagen no será más ancha que su contenedor. */
     margin : auto; /* Centra la imagen horizontalmente. */
-    height : 800px; /* Altura fija para las imágenes del carrusel. */
+    height : 800px; /* Altura fija para las imágenes. */
     object-fit : cover; /* La imagen cubre todo el espacio sin deformarse. */
 }
-.carousel-caption { /* Estilos para la leyenda del carrusel. */
-    background-color : rgb(0, 0, 0, 0.5); /* Fondo negro semitransparente para mejorar la legibilidad. */
-    border-radius : 10px; /* Redondea las esquinas de la leyenda. */
+.carousel-caption { /* Leyenda del carrusel de Bootstrap. */
+    background-color : rgb(0, 0, 0, 0.5); /* Fondo negro semitransparente para legibilidad. */
+    border-radius : 10px; /* Redondea las esquinas. */
 }
 .navbar { /* Estilos para la barra de navegación. */
-    position : relative; /* Permite posicionar elementos hijos de forma absoluta respecto a la barra. */
+    position : relative; /* Permite posicionar elementos hijos de forma absoluta. */
     cursor : pointer; /* Cambia el cursor a una mano. */
 }
-.modal-content { /* Estilos para el contenido de un modal. */
+.modal-content { /* Contenido de un modal (sobrescrito más abajo). */
     background-color : #60c5f3; /* Fondo azul claro. */
     border : none; /* Sin borde. */
     border-radius : 0.5rem; /* Bordes redondeados. */
@@ -250,7 +242,7 @@ p { /* Estilos para los párrafos. */
 .modal-body { /* Cuerpo del modal. */
     padding : 1.5rem !important ; /* Relleno, !important para asegurar que sobreescriba otros estilos. */
 }
-.form-control { /* Estilos para los controles de formulario de Bootstrap. */
+.form-control { /* Controles de formulario de Bootstrap. */
     padding : 0.75rem 1rem; /* Relleno interno. */
     border-radius : 0.5rem; /* Bordes redondeados. */
     border : #fafafb solid 1px; /* Borde muy claro. */
@@ -259,7 +251,7 @@ p { /* Estilos para los párrafos. */
     border-color : #0a0b0b; /* Cambia el color del borde al enfocar. */
     box-shadow : 0 0 0 0.25rem rgb(13, 110, 253, 0.25); /* Añade una sombra de resplandor. */
 }
-.btn-container { /* Contenedor para botones. */
+.btn-container { /* Contenedor para botones (clase no utilizada). */
     display : flex; /* Habilita flexbox. */
     flex-direction : column; /* Apila los botones verticalmente. */
     gap : 1rem; /* Espacio entre los botones. */
@@ -267,25 +259,22 @@ p { /* Estilos para los párrafos. */
     margin-top : 1.5rem; /* Espacio arriba del contenedor. */
 }
 
-.divider::before, .divider::after { /* Líneas a los lados del texto divisor. */
+.divider::before, .divider::after { /* Líneas a los lados de un texto divisor (clase no utilizada). */
     content : ""; /* Necesario para que los pseudo-elementos se muestren. */
-    position : absolute; /* Posicionamiento absoluto respecto al divisor. */
+    position : absolute; /* Posicionamiento absoluto. */
     top : 50%; /* Se posiciona a la mitad de la altura. */
     width : 45%; /* Ocupa el 45% del ancho del contenedor. */
     height : 1px; /* Altura de la línea. */
     background-color : rgb(111, 66, 66); /* Color de la línea. */
 }
-.divider::before { /* Línea izquierda. */
-    left : 0; /* Se posiciona a la izquierda. */
-}
-.divider::after { /* Línea derecha. */
-    right : 0; /* Se posiciona a la derecha. */
-}
-.remember-me { /* Estilos para la casilla "Recuérdame". */
-    margin-bottom : 1.5rem; /* Espacio debajo de la casilla. */
+.divider::before { left : 0; } /* Línea izquierda. */
+.divider::after { right : 0; } /* Línea derecha. */
+
+.remember-me { /* Casilla "Recuérdame" (clase no utilizada). */
+    margin-bottom : 1.5rem; /* Espacio debajo. */
 }
 
-.icon-link { /* Estilos para un enlace con ícono. */
+.icon-link { /* Enlace con ícono (clase no utilizada). */
     display : flex; /* Habilita flexbox. */
     flex-direction : column; /* Apila el ícono y el texto verticalmente. */
     align-items : center; /* Centra horizontalmente. */
@@ -297,21 +286,16 @@ p { /* Estilos para los párrafos. */
     font-size : 2rem; /* Tamaño grande para el ícono. */
     margin-bottom : 0.5rem; /* Espacio entre el ícono y el texto. */
 }
-@media (min-width: 3025px) { /* Media query para pantallas muy grandes. */
-    .nav-links { /* Muestra los enlaces de navegación. */
-        display : flex; /* Muestra los enlaces en línea. */
-        gap : 1rem; /* Espacio entre enlaces. */
-    }
-    .navbar-toggler { /* Oculta el botón de menú hamburguesa. */
-        display : none; /* No se muestra en pantallas grandes. */
-    }
+@media (min-width: 3025px) { /* Media query para pantallas muy grandes (más de 3025px). */
+    .nav-links { display : flex; gap : 1rem; } /* Muestra los enlaces de navegación en línea. */
+    .navbar-toggler { display : none; } /* Oculta el botón de menú hamburguesa. */
 }
-.nav-links.open { /* Estilos para el menú de navegación cuando está abierto (en móviles). */
+.nav-links.open { /* Estilos para el menú de navegación cuando está abierto en móviles. */
     display : flex; /* Muestra el menú. */
     flex-direction : column; /* Apila los enlaces verticalmente. */
     align-items : flex-start; /* Alinea los enlaces a la izquierda. */
     background-color : #77777a; /* Fondo gris oscuro. */
-    position : absolute; /* Posicionamiento absoluto para superponerse. */
+    position : absolute; /* Posicionamiento absoluto para superponerse al contenido. */
     top : 60px; /* Distancia desde la parte superior de la barra de navegación. */
     left : 0; /* Alineado al borde izquierdo. */
     width : 13%; /* Ancho del menú desplegado. */
@@ -319,24 +303,22 @@ p { /* Estilos para los párrafos. */
     padding : 1rem; /* Relleno interno. */
     z-index : 10; /* Asegura que el menú esté por encima de otros contenidos. */
 }
-.navbar { /* Redefinición de estilos para la barra de navegación. */
-    background-color : #77777a; /* Fondo azul oscuro. */
+.navbar { /* Estilos principales de la barra de navegación. */
+    background-color : #77777a; /* Fondo gris oscuro. */
     color : white; /* Texto blanco. */
     padding : 1rem; /* Relleno. */
     display : flex; /* Habilita flexbox. */
-    justify-content : space-between; /* Separa el logo y los enlaces. */
+    justify-content : space-between; /* Separa el logo a la izquierda y los enlaces a la derecha. */
     align-items : center; /* Centra verticalmente los elementos. */
 }
-.nav-links { /* Redefinición de los enlaces de navegación. */
+.nav-links { /* Contenedor de los enlaces de navegación. */
     display : none; /* Oculto por defecto en vistas móviles. */
     list-style : none; /* Elimina los puntos de la lista. */
     padding : 0; /* Sin relleno. */
     margin : 0; /* Sin margen. */
     flex-wrap: wrap; /* Permite que los enlaces pasen a la siguiente línea si no caben. */
 }
-.nav-links li { /* Elementos de la lista de navegación. */
-    margin : 0; /* Sin margen en los elementos de la lista. */
-}   
+.nav-links li { margin : 0; } /* Elimina el margen de los elementos de la lista. */   
 .nav-links a { /* Enlaces de navegación. */
     color : #ffffff; /* Color de texto blanco. */
     text-decoration : none; /* Sin subrayado. */
@@ -344,45 +326,39 @@ p { /* Estilos para los párrafos. */
     display : block; /* Convierte el enlace en un bloque para ocupar todo el espacio. */
     padding : 0.5rem; /* Relleno para aumentar el área de clic. */
 }
-.nav-links a:hover, .nav-links a.active {
-    background-color: #5a5a5e; /* Color de fondo más oscuro para el hover y el estado activo */
-    border-radius: 5px; /* Bordes redondeados para un aspecto más suave */
-    transition: background-color 0.3s ease; /* Transición suave */
+.nav-links a:hover, .nav-links a.active { /* Estilo para enlaces activos o al pasar el cursor. */
+    background-color: #5a5a5e; /* Fondo gris más oscuro. */
+    border-radius: 5px; /* Bordes redondeados. */
+    transition: background-color 0.3s ease; /* Transición suave. */
 }
 
 .navbar-toggler { /* Botón de menú hamburguesa. */
     background : none; /* Sin fondo. */
     border : none; /* Sin borde. */
-    color : #ffffff !important; /* Color del ícono blanco (importante para sobreescribir). */
+    color : #ffffff !important; /* Color del ícono blanco (importante para sobreescribir Bootstrap). */
     font-size : 0.75rem; /* Tamaño de fuente. */
 }
-.modal-content { /* Redefinición del contenido del modal. */
+.modal-content { /* Contenido del modal. */
     padding : 20px; /* Relleno. */
 }
-.btn-success { /* Estilos para botones de éxito de Bootstrap. */
+.btn-success { /* Botón de éxito de Bootstrap. */
     background-color : white; /* Fondo blanco. */
-    color : #ffffff; /* Texto blanco (esto podría ser un error, el texto no se verá). */
+    color : #ffffff; /* Texto blanco (esto es un error, el texto no se verá sobre fondo blanco). */
 }
-.modal-body table { /* Tabla dentro del cuerpo de un modal. */
-    width : 100%; /* La tabla ocupa todo el ancho del modal. */
-}
+.modal-body table { width : 100%; } /* La tabla dentro del modal ocupa todo el ancho. */
 .modal-body th, .modal-body td { /* Celdas de la tabla en el modal. */
     padding : 0.5rem; /* Relleno. */
     text-align : left; /* Alineación a la izquierda. */
     text-align : center; /* Sobrescribe la alineación anterior, centrando el texto. */
     vertical-align : middle; /* Centra el contenido verticalmente. */
 }
-.modal-body img { /* Imágenes en el cuerpo del modal. */
-    max-width : 50px; /* Limita el tamaño de las imágenes. */
-}
-.modal-dialog { /* Diálogo del modal. */
-    max-width : 800px; /* Ancho máximo del modal. */
-}
+.modal-body img { max-width : 50px; } /* Limita el tamaño de las imágenes en el modal. */
+.modal-dialog { max-width : 800px; } /* Ancho máximo del diálogo del modal. */
 .btn-danger { /* Botón de peligro de Bootstrap. */
     display : inline-block; /* Se muestra como bloque en línea. */
     margin : 0 auto; /* Centra el botón horizontalmente. */
 }
-.container { /* Redefinición del contenedor. */
+.container { /* Contenedor principal de la página. */
     width : 100%; /* Ocupa todo el ancho disponible. */
     max-width : 1200px; /* Ancho máximo para pantallas grandes. */
     margin : 0 auto; /* Centra el contenedor en la página. */
@@ -394,11 +370,11 @@ p { /* Estilos para los párrafos. */
     text-align : center; /* Centra el texto. */
     color : white; /* Color de texto blanco. */
 }
-.cd-headline { /* Título animado. */
+.cd-headline { /* Título animado (clase no utilizada). */
     font-size : 1.8rem; /* Tamaño de fuente. */
     margin-top : 10px; /* Margen superior. */
 }
-.cd-words-wrapper b { /* Palabras que se animan. */
+.cd-words-wrapper b { /* Palabras que se animan (clase no utilizada). */
     display : inline-block; /* Se muestra como bloque en línea. */
     font-weight : 400; /* Grosor de fuente normal. */
     color : #0d76a6; /* Color de texto azul. */
@@ -413,93 +389,48 @@ p { /* Estilos para los párrafos. */
     position : relative; /* Posicionamiento relativo. */
     height : auto; /* Altura automática. */
 }
-.slider-images-wrapper .item { /* Cada elemento del carrusel. */
+.slider-images-wrapper .item { /* Cada elemento (slide) del carrusel. */
     object-fit : contain; /* La imagen se ajusta para ser completamente visible. */
-    animation : slideIn 6s infinite; /* Animación de deslizamiento (keyframe no definido). */
+    animation : slideIn 6s infinite; /* Animación de deslizamiento (el keyframe 'slideIn' no está definido). */
     display : flex; /* Habilita flexbox. */
     justify-content : center; /* Centra horizontalmente. */
     align-items : center; /* Centra verticalmente. */
     height : 600px; /* Altura fija. */
 }
 .slider-images-wrapper img { /* Imágenes del carrusel. */
-    width: 100%; /* La imagen ocupa todo el ancho de su contenedor (.item). */
-    height: 100%; /* La imagen ocupa toda la altura de su contenedor (.item). */
-    object-fit: contain; /* La imagen se ajusta para ser completamente visible sin deformarse. */
+    width: 100%; /* La imagen ocupa todo el ancho de su contenedor. */
+    height: 100%; /* La imagen ocupa toda la altura de su contenedor. */
+    object-fit: contain; /* La imagen se ajusta para ser visible sin deformarse, puede dejar espacios. */
 }
 
 @media (max-width: 767px) { /* Media query para pantallas de hasta 767px de ancho (móviles). */
-    .navbar { /* Barra de navegación en móviles. */
-        flex-direction : column; /* Apila los elementos verticalmente. */
-        align-items : flex-start; /* Alinea los elementos a la izquierda. */
-    }
-    .slider-images-wrapper { /* Contenedor de imágenes del carrusel en móviles. */
-        height : 300px; /* Reduce la altura del carrusel. */
-    }
-    .slider-images-wrapper img { /* Imágenes del carrusel en móviles. */
-        max-width : 100%; /* Ancho máximo del 100%. */
-        max-height : 100%; /* Altura máxima del 100%. */
-    }
-    .history-wrapper h2 { /* Título de historia en móviles. */
-        font-size : 1.5rem; /* Reduce el tamaño de la fuente. */
-    }
-    .history-wrapper p { /* Párrafo de historia en móviles. */
-        font-size : 0.9rem; /* Reduce el tamaño de la fuente. */
-    }
-    .container { /* Contenedor en móviles. */
-        width : 100%; /* Ocupa todo el ancho. */
-        padding : 15px; /* Reduce el relleno. */
-    }
+    .navbar { flex-direction : column; align-items : flex-start; } /* Apila los elementos de la navbar y los alinea a la izquierda. */
+    .slider-images-wrapper { height : 300px; } /* Reduce la altura del carrusel. */
+    .slider-images-wrapper img { max-width : 100%; max-height : 100%; } /* Asegura que la imagen no se desborde. */
+    .history-wrapper h2 { font-size : 1.5rem; } /* Reduce el tamaño de la fuente (clase no utilizada). */
+    .history-wrapper p { font-size : 0.9rem; } /* Reduce el tamaño de la fuente (clase no utilizada). */
+    .container { width : 100%; padding : 15px; } /* El contenedor ocupa todo el ancho con menos relleno. */
 }
 @media (min-width: 768px) and (max-width: 1024px) { /* Media query para pantallas de tablets. */
-    .navbar { /* Barra de navegación en tablets. */
-        padding : 1rem 2rem; /* Aumenta el relleno lateral. */
-    }
-    .slider-images-wrapper { /* Contenedor de imágenes del carrusel en tablets. */
-        height : 400px; /* Altura intermedia para el carrusel. */
-    }
-    .history-wrapper h2 { /* Título de historia en tablets. */
-        font-size : 2rem; /* Tamaño de fuente. */
-    }
-    .history-wrapper p { /* Párrafo de historia en tablets. */
-        font-size : 1rem; /* Tamaño de fuente. */
-    }
-    .container { /* Contenedor en tablets. */
-        width : 95%; /* Ancho del 95% de la pantalla. */
-    }
+    .navbar { padding : 1rem 2rem; } /* Aumenta el relleno lateral de la navbar. */
+    .slider-images-wrapper { height : 400px; } /* Altura intermedia para el carrusel. */
+    .history-wrapper h2 { font-size : 2rem; } /* Tamaño de fuente (clase no utilizada). */
+    .history-wrapper p { font-size : 1rem; } /* Tamaño de fuente (clase no utilizada). */
+    .container { width : 95%; } /* Ancho del 95% de la pantalla. */
 }
 @media (min-width: 1025px) and (max-width: 1920px) { /* Media query para pantallas de escritorio estándar. */
-    .navbar { /* Barra de navegación en escritorios. */
-        padding : 1.5rem 3rem; /* Aumenta aún más el relleno. */
-    }
-    .slider-images-wrapper { /* Contenedor de imágenes del carrusel en escritorios. */
-        height : 500px; /* Altura mayor para el carrusel. */
-    }
-    .slider-description h1 { /* Título del carrusel en escritorios. */
-        font-size : 2.5rem; /* Tamaño de fuente grande. */
-    }
-    .history-wrapper { /* Contenedor de historia en escritorios. */
-        gap : 40px; /* Aumenta el espacio entre elementos. */
-    }
-    .history-wrapper h2 { /* Título de historia en escritorios. */
-        font-size : 2.5rem; /* Tamaño de fuente. */
-    }
-    .history-wrapper p { /* Párrafo de historia en escritorios. */
-        font-size : 1.1rem; /* Tamaño de fuente. */
-    }
+    .navbar { padding : 1.5rem 3rem; } /* Aumenta aún más el relleno de la navbar. */
+    .slider-images-wrapper { height : 500px; } /* Altura mayor para el carrusel. */
+    .slider-description h1 { font-size : 2.5rem; } /* Tamaño de fuente grande (clase no utilizada). */
+    .history-wrapper { gap : 40px; } /* Aumenta el espacio entre elementos (clase no utilizada). */
+    .history-wrapper h2 { font-size : 2.5rem; } /* Tamaño de fuente (clase no utilizada). */
+    .history-wrapper p { font-size : 1.1rem; } /* Tamaño de fuente (clase no utilizada). */
 }
 @media (min-width: 1921px) { /* Media query para pantallas muy grandes (ej. 4K). */
-    .slider-images-wrapper { /* Contenedor de imágenes del carrusel. */
-        height : 700px; /* Altura aún mayor para el carrusel. */
-    }
-    .slider-description h1 { /* Título del carrusel. */
-        font-size : 3.5rem; /* Tamaño de fuente muy grande. */
-    }
-    .history-wrapper h2 { /* Título de historia. */
-        font-size : 3rem; /* Tamaño de fuente. */
-    }
-    .history-wrapper p { /* Párrafo de historia. */
-        font-size : 1.2rem; /* Tamaño de fuente. */
-    }
+    .slider-images-wrapper { height : 700px; } /* Altura aún mayor para el carrusel. */
+    .slider-description h1 { font-size : 3.5rem; } /* Tamaño de fuente muy grande (clase no utilizada). */
+    .history-wrapper h2 { font-size : 3rem; } /* Tamaño de fuente (clase no utilizada). */
+    .history-wrapper p { font-size : 1.2rem; } /* Tamaño de fuente (clase no utilizada). */
 }
 .product-item { /* Redefinición de item de producto. */
     border : #ddd solid 1px; /* Borde gris claro. */
@@ -511,102 +442,60 @@ p { /* Estilos para los párrafos. */
     width: auto; /* Ancho automático para mantener la proporción. */
     max-width: 100%; /* La imagen no excederá el ancho de su contenedor. */
     height: 250px; /* Altura fija. */
-    object-fit: cover; /* La imagen cubre el espacio asignado, puede recortarse. */
+    object-fit: cover; /* La imagen cubre el espacio asignado, puede recortarse para llenar el área. */
 }
-@media (max-width: 767px) { /* Media query para móviles (esta es redundante con la anterior). */
-    .header h1 { /* Título de cabecera en móviles. */
-        font-size : 28px; /* Reduce el tamaño de la fuente. */
+@media (max-width: 767px) { /* Media query para móviles (contiene estilos redundantes y nuevos). */
+    .header h1 { font-size : 28px; } /* Reduce el tamaño de la fuente de la cabecera. */
+    .header p { font-size : 18px; } /* Reduce el tamaño de la fuente del párrafo. */
+    .product-grid { flex-direction : column; } /* Apila los productos verticalmente. */
+    .nav-links { /* Estilos para enlaces de navegación en móviles (redundante). */
+        display : none; position : absolute; top : 60px; left : 0;
+        width : 100%; background-color : #0f0da6; z-index : 10;
     }
-    .header p { /* Párrafo de cabecera en móviles. */
-        font-size : 18px; /* Reduce el tamaño de la fuente. */
-    }
-    .product-grid { /* Cuadrícula de productos en móviles. */
-        flex-direction : column; /* Apila los productos verticalmente. */
-    }
-    .nav-links { /* Enlaces de navegación en móviles. */
-        display : none; /* Ocultos por defecto. */
-        position : absolute; /* Posición absoluta. */
-        top : 60px; /* Distancia desde arriba. */
-        left : 0; /* Alineado a la izquierda. */
-        width : 100%; /* Ancho completo. */
-        background-color : #0f0da6; /* Fondo azul. */
-        z-index : 10; /* Se superpone a otros elementos. */
-    }
-    .nav-links.open { /* Cuando el menú está abierto. */
-        display : block; /* Se muestra como un bloque. */
-    }
+    .nav-links.open { display : block; } /* Muestra el menú cuando está abierto. */
     .navbar-toggler { /* Botón de menú hamburguesa. */
-        display : inline-block; /* Se muestra en móviles. */
-        color : white; /* Color blanco. */
-        font-size : 1.5rem; /* Tamaño de fuente. */
-        cursor : pointer; /* Cursor de mano. */
+        display : inline-block; color : white; font-size : 1.5rem; cursor : pointer;
     }
-    .logo { /* Logo en móviles. */
-        margin-left : 0; /* Elimina el margen izquierdo. */
-    }
-    .nav-links.open {
-        width: 250px; /* Define un ancho fijo para el menú lateral abierto. */
-    }
-    .productos .col-md-5 {
-        flex: 0 0 auto; /* Evita que las columnas de Bootstrap se estiren en flexbox. */
-    }
+    .logo { margin-left : 0; } /* Elimina el margen izquierdo del logo en móviles. */
+    .nav-links.open { width: 250px; } /* Define un ancho fijo para el menú lateral abierto. */
+    .productos .col-md-5 { flex: 0 0 auto; } /* Evita que las columnas de Bootstrap se estiren en flexbox. */
 }
 @media (min-width: 1024px) { /* Media query para pantallas de 1024px o más. */
-    .navbar { /* Barra de navegación. */
-        padding : 1.5rem 2rem; /* Aumenta el relleno. */
-    }
-    .product-item { /* Item de producto. */
-        width : 250px; /* Ancho mayor para los productos. */
-    }
+    .navbar { padding : 1.5rem 2rem; } /* Aumenta el relleno de la navbar. */
+    .product-item { width : 250px; } /* Ancho mayor para los productos. */
 }
 @media (min-width: 3025px) { /* Media query para pantallas muy grandes (redundante). */
-    .nav-links { /* Enlaces de navegación. */
-        display : flex; /* Se muestran como flexbox. */
-        gap : 1rem; /* Espacio entre ellos. */
-    }
-    .navbar-toggler { /* Se oculta el botón de menú. */
-        display : none; /* No se muestra. */
-    }
+    .nav-links { display : flex; gap : 1rem; } /* Muestra los enlaces. */
+    .navbar-toggler { display : none; } /* Oculta el botón de menú. */
 }
 
-@media (max-width: 600px) { /* Media query para pantallas de 600px o menos. */
-    .table { /* Tabla. */
-        font-size: 0.7rem; /* Reduce el tamaño de la fuente de la tabla en móviles. */
-    }
-
-    .btn { /* Botón. */
-        width: 100%; /* El botón ocupa todo el ancho en móviles. */
-    }
+@media (max-width: 600px) { /* Media query para pantallas pequeñas (600px o menos). */
+    .table { font-size: 0.7rem; } /* Reduce el tamaño de la fuente de la tabla. */
+    .btn { width: 100%; } /* El botón ocupa todo el ancho. */
 }
 
-.redes a { /* Enlaces en el contenedor */
-    display: inline-block; /* Se muestra como bloque en línea. */
-    width: 40px; /* Ancho. */
-    height: 40px; /* Altura. */
+.redes a { /* Enlaces de redes sociales (clase no utilizada). */
+    display: inline-block; width: 40px; height: 40px;
     border-radius: 50%; /* Hace que el enlace sea circular. */
-    text-align: center; /* Centra el ícono horizontalmente. */
-    line-height: 40px; /* Centra el ícono verticalmente. */
-    margin: 0 10px; /* Margen horizontal. */
-    color: white; /* Color del ícono. */
-    text-decoration: none; /* Sin subrayado. */
+    text-align: center; line-height: 40px; /* Centra el ícono. */
+    margin: 0 10px; color: white; text-decoration: none;
 }
 
 
-/* Contenedor del formulario */
+/* Estilos para el formulario de registro de mantenimiento. */
 form {
     max-width: 500px; /* Ancho máximo para el formulario. */
     margin: 30px auto; /* Centra el formulario y añade margen vertical. */
     padding: 30px 25px; /* Relleno interno. */
     border-radius: 15px; /* Bordes redondeados. */
     box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08); /* Sombra suave. */
-    display: flex; /* Habilita flexbox. */
-    flex-direction: column; /* Apila los campos verticalmente. */
+    display: flex; flex-direction: column; /* Usa flexbox para apilar los campos verticalmente. */
     gap: 15px; /* Espacio entre los campos. */
     border: 1px solid #424549; /* Borde gris oscuro. */
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente. */
 }
 
-/* Etiquetas del formulario */
+/* Etiquetas del formulario. */
 form label,
 label[for="nombre"], label[for="fecha"], label[for="tipo"] {
     font-weight: 600; /* Texto semi-negrita. */
@@ -616,128 +505,103 @@ label[for="nombre"], label[for="fecha"], label[for="tipo"] {
     letter-spacing: 0.3px; /* Ligero espaciado entre letras. */
 }
 
-/* Campos de entrada y selectores */
+/* Campos de entrada (input) y selectores (select). */
 input[type="text"], input[type="date"], select {
     padding: 15px 16px; /* Relleno interno. */
     background: #ffffff; /* Fondo blanco. */
     border: 2px solid #50585f; /* Borde gris. */
     border-radius: 8px; /* Bordes redondeados. */
     font-size: 1.1em; /* Tamaño de fuente. */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave para efectos. */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave para efectos de foco. */
     box-sizing: border-box; /* El padding y borde no afectan el ancho total. */
 }
 
-input[type="text"]:focus, input[type="date"]:focus, select:focus {
-    border-color: #1976d2; /* Cambia el color del borde a azul al enfocar. */
+input[type="text"]:focus, input[type="date"]:focus, select:focus { /* Estilo al enfocar un campo. */
+    border-color: #1976d2; /* Cambia el color del borde a azul. */
     outline: none; /* Elimina el contorno por defecto del navegador. */
     box-shadow: 0 0 8px rgba(25, 118, 210, 0.2); /* Añade una sombra de resplandor azul. */
 }
 
-/* Estilo para los placeholders y selects inválidos */
+/* Estilo para los placeholders y selects no válidos (opción por defecto). */
 input[type="text"]::placeholder, input[type="date"]::placeholder, select:invalid {
     color: #636363; /* Color gris para el texto de placeholder. */
     opacity: 1; /* Asegura que el color sea visible. */
 }
 
-/* Botón principal */
+/* Botón principal del formulario. */
 button {
     background: linear-gradient(90deg, #df9c0c 100%); /* Fondo con degradado naranja. */
     color: #fff; /* Texto blanco. */
-    padding: 14px; /* Relleno. */
-    border: none; /* Sin borde. */
-    border-radius: 8px; /* Bordes redondeados. */
-    cursor: pointer; /* Cursor de mano. */
+    padding: 14px; border: none; border-radius: 8px; cursor: pointer;
     margin-top: 14px; /* Espacio arriba del botón. */
-    font-size: 1.15em; /* Tamaño de fuente. */
-    font-weight: 600; /* Texto semi-negrita. */
-    letter-spacing: 0.6px; /* Espaciado entre letras. */
-    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transiciones suaves para efectos. */
+    font-size: 1.15em; font-weight: 600; letter-spacing: 0.6px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s; /* Transiciones suaves. */
     box-shadow: 0 3px 15px rgba(44, 62, 80, 0.1); /* Sombra sutil. */
 }
 
-/* Efecto hover para el botón */
+/* Efecto hover para el botón. */
 button:hover {
     background: linear-gradient(90deg, #ff7300e8 100%); /* Cambia el degradado al pasar el mouse. */
     transform: translateY(-3px) scale(1.05); /* Eleva y agranda ligeramente el botón. */
     box-shadow: 0 5px 20px rgb(226, 124, 8); /* Sombra más pronunciada. */
 }
 
-/* Botón de eliminar */
+/* Botón de eliminar en la tabla. */
 .eliminar {
-    background: none; /* Sin fondo. */
-    border: none; /* Sin borde. */    
+    background: none; border: none; /* Sin fondo ni borde. */    
     color: #d32f2f; /* Color rojo para indicar peligro. */
-    font-size: 1em; /* Tamaño de fuente. */
-    cursor: pointer; /* Cursor de mano. */
+    font-size: 1em; cursor: pointer; /* Tamaño de fuente y cursor. */
     transition: color 0.2s; /* Transición suave para el color. */
     padding: 6px 6px; /* Relleno reducido. */
 }
-.eliminar:hover {
-    color: #b71c1c; /* Rojo más oscuro al pasar el mouse. */
-}
+.eliminar:hover { color: #b71c1c; } /* Rojo más oscuro al pasar el mouse. */
 
-/* Tabla de registros */
+/* Tabla de registros de mantenimiento. */
 #maintenanceTable {
-    width: 95%; /* Ancho de la tabla. */
-    margin: 20px auto; /* Centra la tabla y añade margen vertical. */
+    width: 95%; margin: 20px auto; /* Ancho y centrado. */
     border-collapse: collapse; /* Une los bordes de las celdas. */
-    background: #ffffff; /* Fondo blanco. */
-    border-radius: 12px; /* Bordes redondeados para el contenedor de la tabla. */
-    overflow: hidden; /* Asegura que los bordes redondeados se apliquen. */
+    background: #ffffff; border-radius: 12px; /* Fondo blanco y bordes redondeados. */
+    overflow: hidden; /* Asegura que los bordes redondeados se apliquen a la tabla. */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Sombra pronunciada. */
-    font-size: 1.05em; /* Tamaño de fuente base para la tabla. */
+    font-size: 1.05em; /* Tamaño de fuente base. */
 }
-#maintenanceTable th,
-#maintenanceTable td {
-    border: 2px solid #283593; /* Borde azul oscuro para las celdas. */
-    padding: 6px 4px;      /* Relleno reducido para celdas más compactas. */
-    text-align: center; /* Centra el texto. */
-    vertical-align: middle; /* Centra el contenido verticalmente. */
-    font-size: 0.85em;     /* Tamaño de fuente más pequeño para el contenido de la tabla. */
+#maintenanceTable th, #maintenanceTable td { /* Celdas de encabezado y de datos. */
+    border: 2px solid #283593; /* Borde azul oscuro. */
+    padding: 6px 4px; /* Relleno reducido. */
+    text-align: center; vertical-align: middle; /* Centrado de contenido. */
+    font-size: 0.85em; /* Tamaño de fuente más pequeño para el contenido. */
     word-break: break-word; /* Permite que palabras largas se dividan para evitar desbordamiento. */
-    background-color: #f3f4f6; /* Fondo gris claro para las celdas. */
-    line-height: 1.2;      /* Altura de línea reducida. */
+    background-color: #f3f4f6; /* Fondo gris claro. */
+    line-height: 1.2; /* Altura de línea reducida. */
 }
-#maintenanceTable th {
-    background: linear-gradient(90deg, #ff7300e8 100%); /* Fondo degradado naranja para los encabezados. */
-    color: #fff; /* Texto blanco. */
-    font-weight: 700; /* Texto en negrita. */
-    letter-spacing: 0.5px; /* Espaciado entre letras. */
+#maintenanceTable th { /* Celdas de encabezado. */
+    background: linear-gradient(90deg, #ff7300e8 100%); /* Fondo degradado naranja. */
+    color: #fff; font-weight: 700; letter-spacing: 0.5px; /* Texto blanco y en negrita. */
 }
-#maintenanceTable tr:nth-child(even) td {
-    background-color: #ffffff; /* Fondo blanco para filas pares (efecto cebra). */
-}
-#maintenanceTable tr:hover td {
-    background-color: #e8f0fe; /* Resalta la fila con un fondo azul claro al pasar el mouse. */
-    transition: background 0.3s; /* Transición suave para el color de fondo. */
+#maintenanceTable tr:nth-child(even) td { background-color: #ffffff; } /* Fondo blanco para filas pares (efecto cebra). */
+#maintenanceTable tr:hover td { /* Resalta la fila al pasar el mouse. */
+    background-color: #e8f0fe; /* Fondo azul claro. */
+    transition: background 0.3s; /* Transición suave. */
 }
 
-/* Mejora visual para el input de fecha */
+/* Mejora visual para el campo de fecha. */
 input[type="date"] {
     position: relative; /* Posicionamiento relativo. */
-    background: #ffffff url('data:image/svg+xml;utf8,<svg fill="gray" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm0-13H5V6h14v1z"/></svg>') no-repeat right 12px center/22px 22px; /* Fondo blanco con un ícono de calendario SVG a la derecha. */
+    background: #ffffff url('data:image/svg+xml;utf8,<svg fill="gray" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zm0-13H5V6h14v1z"/></svg>') no-repeat right 12px center/22px 22px; /* Añade un ícono de calendario SVG. */
     cursor: pointer; /* Cursor de mano. */
 }
 
-/* Cambia el color del texto del input de fecha cuando no hay valor */
-input[type="date"]:invalid {
-    color: #636363; /* Muestra el texto del placeholder en gris. */
-}
+/* Cambia el color del texto del campo de fecha cuando no hay valor. */
+input[type="date"]:invalid { color: #636363; } /* Muestra el texto del placeholder en gris. */
 
-/* Corrección para evitar parpadeo blanco en Owl Carousel con fadeOut */
-.owl-carousel .owl-item {
-    position: relative; /* Posicionamiento relativo para los items. */
-}
-
-.owl-carousel .owl-item.active {
-    z-index: 1; /* Asegura que el item activo esté por encima de los demás. */
-}
+/* Corrección para evitar parpadeo en Owl Carousel. */
+.owl-carousel .owl-item { position: relative; } /* Posicionamiento relativo para los items. */
+.owl-carousel .owl-item.active { z-index: 1; } /* Asegura que el item activo esté por encima. */
 
 
-/* Estilos para el Dashboard */
-.card {
-    border: none; /* Sin borde. */
-    border-radius: 15px; /* Bordes redondeados. */
+/* Estilos para el Dashboard. */
+.card { /* Estilo base para las tarjetas del dashboard. */
+    border: none; border-radius: 15px; /* Sin borde y esquinas redondeadas. */
     box-shadow: 0 4px 24px rgba(44, 62, 80, 0.08); /* Sombra suave. */
     transition: transform 0.3s, box-shadow 0.3s; /* Transición para efectos hover. */
 }
@@ -747,48 +611,39 @@ input[type="date"]:invalid {
     box-shadow: 0 8px 30px rgba(44, 62, 80, 0.12); /* Sombra más pronunciada. */
 }
 
-.card-title {
-    font-weight: 600; /* Texto semi-negrita. */
-    color: #333; /* Color de texto oscuro. */
-}
+.card-title { font-weight: 600; color: #333; } /* Título de la tarjeta. */
 
-/* Estilo para items de producto sin borde ni fondo */
-.product-item-simple {
-    border: none; /* Sin borde. */
-    padding: 0; /* Sin relleno. */
-    box-shadow: none; /* Sin sombra. */
-}
+/* Estilo para items de producto sin borde ni fondo (usado en index.html). */
+.product-item-simple { border: none; padding: 0; box-shadow: none; }
 
-/* Estilo para el título del Dashboard */
+/* Estilo para el título del Dashboard. */
 .dashboard-title {
     background-color: rgba(255, 255, 255, 0.836); /* Fondo blanco semitransparente. */
     color: #000000; /* Color de texto negro. */
-    display: inline-block; /* Hace que el fondo se ajuste al contenido. */
-    padding: 5px 15px; /* Relleno para que el fondo no esté pegado al texto. */
+    display: inline-block; /* El fondo se ajusta al contenido. */
+    padding: 5px 15px; /* Relleno. */
     border-radius: 5px; /* Bordes redondeados. */
 }
 
-/* Estilos para las tarjetas de login y registro */
+/* Estilos para las tarjetas de login y registro. */
 .auth-card {
-    background-color: transparent; /* Fondo transparente */
-    border: none; /* Sin borde */
+    background-color: transparent; /* Fondo transparente. */
+    border: none; /* Sin borde. */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra muy sutil. */
 }
 
 .auth-card .form-control {
-    padding: 0.75rem; /* Relleno para los campos de formulario dentro de la tarjeta. */
-    border: 1px solid #424344; /* Borde gris estándar para mejor visibilidad */
+    padding: 0.75rem; /* Relleno para los campos de formulario. */
+    border: 1px solid #424344; /* Borde gris para mejor visibilidad. */
 }
 
-.auth-card .form-label {
-    color: rgb(0, 0, 0); /* Cambia el color del texto de las etiquetas a blanco */
-}
+.auth-card .form-label { color: rgb(0, 0, 0); } /* Color negro para las etiquetas del formulario. */
 
-/* Fondo para bloques de texto en páginas de contenido */
+/* Fondo para bloques de texto en páginas de contenido (preventivo.html, correctivo.html). */
 .text-background {
-    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
-    padding: 20px; /* Relleno interno */
-    border-radius: 10px; /* Bordes redondeados */
-    color: #333; /* Color de texto oscuro para contraste */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente. */
+    padding: 20px; /* Relleno interno. */
+    border-radius: 10px; /* Bordes redondeados. */
+    color: #333; /* Color de texto oscuro para contraste. */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil. */
 }
