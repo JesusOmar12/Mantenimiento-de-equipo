@@ -28,6 +28,7 @@ const tableBody = document.querySelector('#maintenanceTable tbody'); // Cuerpo d
 const dashboardStats = document.getElementById('dashboard-stats'); // Contenedor principal del dashboard.
 const opinionForm = document.getElementById('opinion-form'); // Formulario de opinión (no utilizado en los HTML proporcionados).
 const logoutButton = document.getElementById('logout-button'); // Botón para cerrar sesión.
+const deleteAllButton = document.getElementById('delete-all-button'); // Botón para eliminar todos los registros.
 
 // Variable para almacenar la instancia del gráfico de Chart.js, permitiendo su destrucción y recreación.
 let tipoMantenimientoChart = null; 
@@ -250,6 +251,21 @@ if (form) {
             form.reset(); // Reinicia el formulario después de un registro exitoso.
         } catch (error) { // Si ocurre un error al guardar...
             alert('Error al guardar en Firebase: ' + error.message); // Muestra una alerta con el mensaje de error.
+        }
+    });
+}
+
+// --- Lógica para eliminar todos los registros ---
+if (deleteAllButton) { // Ejecuta este bloque solo si el botón de eliminar todo existe en la página.
+    deleteAllButton.addEventListener('click', () => { // Añade un listener para el evento de clic.
+        // Pide confirmación al usuario antes de proceder.
+        if (confirm('¿Estás seguro de que deseas eliminar TODOS los registros de mantenimiento? Esta acción no se puede deshacer.')) {
+            // Llama a la función de Firebase para eliminar todos los datos en la ruta 'mantenimientos'.
+            remove(ref(db, 'mantenimientos'))
+                .catch((error) => { // Si ocurre un error durante la eliminación...
+                    console.error("Error al eliminar todos los registros:", error); // Muestra el error en la consola.
+                    alert('Ocurrió un error al intentar eliminar los registros.'); // Informa al usuario del error.
+                });
         }
     });
 }
