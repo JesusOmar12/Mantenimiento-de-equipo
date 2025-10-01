@@ -127,14 +127,14 @@ function updateDashboard(snapshot) {
                                 '#FF5E00', // Naranja.
                                 '#CDDB00', // Gris oscuro.
                                 '#4BC0C0', // Verde azulado.
-                                '#9966FF', // Púrpura.
+                                '#70003F', // Púrpura.
                             ],
                             borderColor: [ // Colores del borde para los segmentos.
                                 '#11293E', // Azul oscuro.
                                 '#FF5E00', // Naranja.
                                 '#CDDB00', // Gris oscuro.
                                 '#4BC0C0', // Verde azulado.
-                                '#9966FF', // Púrpura.
+                                '#70003F', // Púrpura.
                             ],
                             borderWidth: 1 // Ancho del borde.
                         }]
