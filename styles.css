@@ -22,16 +22,7 @@ main { /* Estilos para el contenido principal de la página. */
 .logo-container { /* Contenedor para el logo en la barra de navegación. */
     align-items: center; /* Centra verticalmente los elementos dentro del contenedor (logo y texto). */
 }
-.header { /* Estilos para una sección de cabecera (clase no utilizada actualmente en el HTML). */
-    background-color: rgb(46, 46, 46); /* Fondo gris oscuro. */
-    color: #333; /* Color de texto oscuro (puede que no contraste bien con el fondo). */
-    text-align: center; /* Centra el texto horizontalmente. */
-    padding: 20px; /* Añade un relleno de 20 píxeles. */
-    overflow : hidden; /* Oculta cualquier contenido que se desborde. */
-    white-space : nowrap; /* Evita que el texto se divida en varias líneas. */
-    border-right : 0.15em solid rgb(228, 241, 156); /* Crea un borde para simular un cursor de máquina de escribir. */
-    animation : typing 5s steps(40,end), blink-caret 0.75s step-end infinite; /* Aplica animaciones de escritura y parpadeo del cursor. */
-}
+
 .header h1 { /* Estilos para el título H1 dentro de la cabecera. */
     font-size : 48px; /* Establece un tamaño de fuente grande. */
     margin-bottom : 10px; /* Añade un espacio debajo del título. */
@@ -93,8 +84,8 @@ main { /* Estilos para el contenido principal de la página. */
 }
 
 footer { /* Estilos para el pie de página. */
-    background-color : #504f4f; /* Establece un color de fondo gris oscuro. */
-    color : white; /* Establece el color del texto a blanco. */
+    background-color : #F2F2F2; /* Establece un color de fondo gris claro. */
+    color : rgb(17, 41, 62); /* Establece el color del texto a azul oscuro. */
     text-align : center; /* Centra el contenido del pie de página. */
     padding : 20px; /* Añade un relleno de 20 píxeles. */
 }
@@ -140,7 +131,7 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
 }
 /* Estilo principal para botones que son enlaces <a>. */
 .btn {
-    background: linear-gradient(90deg, #cf7a09 100%); /* Fondo con degradado naranja. */
+    background: linear-gradient(90deg, #11293E 100%); /* Fondo con degradado naranja. */
     color: #ffffff !important; /* Texto blanco, !important para sobreescribir otros estilos (ej. Bootstrap). */
     padding: 14px; /* Relleno. */
     border: none; /* Sin borde. */
@@ -156,7 +147,7 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
 }
 
 .btn:hover { /* Estilo para el botón al pasar el cursor por encima. */
-    background: linear-gradient(90deg, #ff7300e8 100%); /* Cambia el degradado a un naranja más brillante. */
+    background: linear-gradient(90deg, #FF5E00 100%); /* Cambia el degradado a un naranja más brillante. */
     transform: translateY(-3px) scale(1.05); /* Eleva y agranda ligeramente el botón. */
     box-shadow: 0 5px 20px rgb(255, 255, 255); /* Sombra blanca más pronunciada. */
 }
@@ -245,7 +236,6 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
 .form-control { /* Controles de formulario de Bootstrap. */
     padding : 0.75rem 1rem; /* Relleno interno. */
     border-radius : 0.5rem; /* Bordes redondeados. */
-    border : #fafafb solid 1px; /* Borde muy claro. */
 }
 .form-control:focus { /* Estilo del control de formulario cuando tiene el foco. */
     border-color : #0a0b0b; /* Cambia el color del borde al enfocar. */
@@ -259,33 +249,6 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
     margin-top : 1.5rem; /* Espacio arriba del contenedor. */
 }
 
-.divider::before, .divider::after { /* Líneas a los lados de un texto divisor (clase no utilizada). */
-    content : ""; /* Necesario para que los pseudo-elementos se muestren. */
-    position : absolute; /* Posicionamiento absoluto. */
-    top : 50%; /* Se posiciona a la mitad de la altura. */
-    width : 45%; /* Ocupa el 45% del ancho del contenedor. */
-    height : 1px; /* Altura de la línea. */
-    background-color : rgb(111, 66, 66); /* Color de la línea. */
-}
-.divider::before { left : 0; } /* Línea izquierda. */
-.divider::after { right : 0; } /* Línea derecha. */
-
-.remember-me { /* Casilla "Recuérdame" (clase no utilizada). */
-    margin-bottom : 1.5rem; /* Espacio debajo. */
-}
-
-.icon-link { /* Enlace con ícono (clase no utilizada). */
-    display : flex; /* Habilita flexbox. */
-    flex-direction : column; /* Apila el ícono y el texto verticalmente. */
-    align-items : center; /* Centra horizontalmente. */
-    text-decoration : none; /* Sin subrayado. */
-    color : #fff; /* Color de texto blanco. */
-    font-size : 0.8rem; /* Tamaño de fuente pequeño. */
-}
-.icon-link i { /* Ícono dentro del enlace. */
-    font-size : 2rem; /* Tamaño grande para el ícono. */
-    margin-bottom : 0.5rem; /* Espacio entre el ícono y el texto. */
-}
 @media (min-width: 3025px) { /* Media query para pantallas muy grandes (más de 3025px). */
     .nav-links { display : flex; gap : 1rem; } /* Muestra los enlaces de navegación en línea. */
     .navbar-toggler { display : none; } /* Oculta el botón de menú hamburguesa. */
@@ -304,8 +267,8 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
     z-index : 10; /* Asegura que el menú esté por encima de otros contenidos. */
 }
 .navbar { /* Estilos principales de la barra de navegación. */
-    background-color : #77777a; /* Fondo gris oscuro. */
-    color : white; /* Texto blanco. */
+    background-color : #F2F2F2; /* Fondo gris claro. */
+    color : rgb(17, 41, 62); /* Texto azul oscuro. */
     padding : 1rem; /* Relleno. */
     display : flex; /* Habilita flexbox. */
     justify-content : space-between; /* Separa el logo a la izquierda y los enlaces a la derecha. */
@@ -327,7 +290,7 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
     padding : 0.5rem; /* Relleno para aumentar el área de clic. */
 }
 .nav-links a:hover, .nav-links a.active { /* Estilo para enlaces activos o al pasar el cursor. */
-    background-color: #5a5a5e; /* Fondo gris más oscuro. */
+    background-color: #FF5E00; /* Fondo naranja. */
     border-radius: 5px; /* Bordes redondeados. */
     transition: background-color 0.3s ease; /* Transición suave. */
 }
@@ -335,7 +298,7 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
 .navbar-toggler { /* Botón de menú hamburguesa. */
     background : none; /* Sin fondo. */
     border : none; /* Sin borde. */
-    color : #ffffff !important; /* Color del ícono blanco (importante para sobreescribir Bootstrap). */
+    color : #11293E !important; /* Color del ícono blanco (importante para sobreescribir Bootstrap). */
     font-size : 0.75rem; /* Tamaño de fuente. */
 }
 .modal-content { /* Contenido del modal. */
@@ -454,7 +417,7 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
     }
     .nav-links.open { display : block; } /* Muestra el menú cuando está abierto. */
     .navbar-toggler { /* Botón de menú hamburguesa. */
-        display : inline-block; color : white; font-size : 1.5rem; cursor : pointer;
+        display : inline-block; color : #11293E; font-size : 1.5rem; cursor : pointer;
     }
     .logo { margin-left : 0; } /* Elimina el margen izquierdo del logo en móviles. */
     .nav-links.open { width: 250px; } /* Define un ancho fijo para el menú lateral abierto. */
@@ -472,13 +435,6 @@ p { /* Estilos para los párrafos (sobrescrito por estilos más específicos). *
 @media (max-width: 600px) { /* Media query para pantallas pequeñas (600px o menos). */
     .table { font-size: 0.7rem; } /* Reduce el tamaño de la fuente de la tabla. */
     .btn { width: 100%; } /* El botón ocupa todo el ancho. */
-}
-
-.redes a { /* Enlaces de redes sociales (clase no utilizada). */
-    display: inline-block; width: 40px; height: 40px;
-    border-radius: 50%; /* Hace que el enlace sea circular. */
-    text-align: center; line-height: 40px; /* Centra el ícono. */
-    margin: 0 10px; color: white; text-decoration: none;
 }
 
 
@@ -530,7 +486,7 @@ input[type="text"]::placeholder, input[type="date"]::placeholder, select:invalid
 
 /* Botón principal del formulario. */
 button {
-    background: linear-gradient(90deg, #df9c0c 100%); /* Fondo con degradado naranja. */
+    background: linear-gradient(90deg, #11293E 100%); /* Fondo con degradado naranja. */
     color: #fff; /* Texto blanco. */
     padding: 14px; border: none; border-radius: 8px; cursor: pointer;
     margin-top: 14px; /* Espacio arriba del botón. */
@@ -575,7 +531,7 @@ button:hover {
     line-height: 1.2; /* Altura de línea reducida. */
 }
 #maintenanceTable th { /* Celdas de encabezado. */
-    background: linear-gradient(90deg, #ff7300e8 100%); /* Fondo degradado naranja. */
+    background: linear-gradient(90deg, #FF5E00 100%); /* Fondo degradado naranja. */
     color: #fff; font-weight: 700; letter-spacing: 0.5px; /* Texto blanco y en negrita. */
 }
 #maintenanceTable tr:nth-child(even) td { background-color: #ffffff; } /* Fondo blanco para filas pares (efecto cebra). */
