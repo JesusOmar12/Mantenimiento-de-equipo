@@ -122,18 +122,18 @@ function updateDashboard(snapshot) {
                             label: 'Mantenimientos por Tipo', // Etiqueta para el conjunto de datos.
                             data: data, // Valores numéricos para cada segmento.
                             backgroundColor: [ // Colores de fondo para los segmentos.
-                                'rgba(255, 81, 0, 1)', // Naranja.
-                                'rgba(54, 162, 235, 0.7)', // Azul.
-                                'rgba(85, 83, 83, 1)', // Gris oscuro.
-                                'rgba(75, 192, 192, 0.7)', // Verde azulado.
-                                'rgba(153, 102, 255, 0.7)', // Púrpura.
+                                '#11293E', // Azul oscuro.
+                                '#FF5E00', // Naranja.
+                                '#CDDB00', // Gris oscuro.
+                                '#4BC0C0', // Verde azulado.
+                                '#9966FF', // Púrpura.
                             ],
                             borderColor: [ // Colores del borde para los segmentos.
-                                'rgba(255, 81, 0, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(85, 83, 83, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
+                                '#11293E', // Azul oscuro.
+                                '#FF5E00', // Naranja.
+                                '#CDDB00', // Gris oscuro.
+                                '#4BC0C0', // Verde azulado.
+                                '#9966FF', // Púrpura.
                             ],
                             borderWidth: 1 // Ancho del borde.
                         }]
