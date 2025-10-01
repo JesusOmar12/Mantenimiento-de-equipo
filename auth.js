@@ -1,6 +1,6 @@
 // Importa las funciones necesarias de los módulos de Firebase.
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js"; // Para inicializar la aplicación Firebase.
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js"; // Funciones de autenticación.
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js"; // Funciones de autenticación.
 import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js"; // Funciones de Realtime Database.
 
 // Objeto de configuración de Firebase con las credenciales de tu proyecto.
@@ -25,6 +25,7 @@ export const db = getDatabase(app);
 // Obtiene referencias a los elementos del DOM para los formularios y mensajes de error.
 const loginForm = document.getElementById('login-form'); // Formulario de inicio de sesión.
 const registerForm = document.getElementById('register-form'); // Formulario de registro.
+const forgotPasswordForm = document.getElementById('forgot-password-form'); // Formulario de restablecer contraseña.
 const errorMessageDiv = document.getElementById('error-message'); // Div para mostrar mensajes de error.
 
 // Función para mostrar un mensaje (de error o éxito) en la interfaz.
@@ -91,6 +92,29 @@ if (loginForm) { // Ejecuta este bloque solo si el formulario de login existe en
             })
             .catch((error) => { // Se ejecuta si hay un error durante el inicio de sesión.
                 showMessage('Correo o contraseña incorrectos.'); // Muestra un mensaje de error genérico por seguridad.
+            });
+    });
+}
+
+// --- Lógica de Restablecimiento de Contraseña ---
+if (forgotPasswordForm) { // Ejecuta este bloque solo si el formulario de restablecimiento existe.
+    forgotPasswordForm.addEventListener('submit', (e) => { // Añade un listener para el evento de envío.
+        e.preventDefault(); // Previene la recarga de la página.
+        const email = document.getElementById('email').value; // Obtiene el valor del campo de email.
+
+        // Llama a la función de Firebase para enviar el correo de restablecimiento.
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // Muestra un mensaje de éxito al usuario.
+                showMessage('Se ha enviado un correo para restablecer tu contraseña. Revisa tu bandeja de entrada (y la carpeta de spam).', false);
+                forgotPasswordForm.reset(); // Limpia el formulario.
+            })
+            .catch((error) => { // Se ejecuta si hay un error.
+                let friendlyMessage = "Ocurrió un error. Inténtalo de nuevo.";
+                if (error.code === 'auth/user-not-found') {
+                    friendlyMessage = "No se encontró ningún usuario con ese correo electrónico.";
+                }
+                showMessage(friendlyMessage); // Muestra el mensaje de error amigable.
             });
     });
 }

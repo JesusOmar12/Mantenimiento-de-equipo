@@ -35,15 +35,15 @@ let tipoMantenimientoChart = null;
 // ---
 // Lógica para proteger rutas y cerrar sesión
 // Define un array con los nombres de los archivos HTML que requieren autenticación.
-const protectedPages = ['index.html', 'control_de_mantenimiento.html', 'dashboard.html', 'preventivo.html', 'correctivo.html']; 
+const protectedPages = ['index.html', 'control_de_mantenimiento.html', 'dashboard.html', 'preventivo.html', 'correctivo.html'];
 // Obtiene el nombre del archivo HTML actual de la URL.
 const currentPage = window.location.pathname.split("/").pop(); 
 
 // Escucha los cambios en el estado de autenticación del usuario.
 onAuthStateChanged(auth, (user) => { 
     if (user) { // Si hay un usuario autenticado...
-        // Si el usuario está en la página de login o registro, lo redirige a la página principal.
-        if (currentPage === 'login.html' || currentPage === 'register.html') { 
+        // Si el usuario está en una página pública (login, registro, etc.), lo redirige a la página principal.
+        if (['login.html', 'register.html', 'forgot-password.html'].includes(currentPage)) {
             window.location.href = 'index.html'; // Redirige a index.html.
         }
     } else { // Si no hay un usuario autenticado...
